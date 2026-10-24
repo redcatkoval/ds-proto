@@ -2,7 +2,7 @@ import { useMemo, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { Button, DataTable, EmptyState, FilterChip, MiniCard, Panel, SearchInput, StatusBadge } from "@ds/ui";
 import { Page } from "../Page";
-import { money, orders } from "../data";
+import { archivedOrders, money, orders } from "../data";
 
 type Filter = "all" | "unfulfilled" | "unpaid" | "refunded";
 
@@ -11,14 +11,17 @@ export function OrdersScreen() {
   const [query, setQuery] = useState("");
   const [filter, setFilter] = useState<Filter>("all");
   const [selected, setSelected] = useState<string[]>([]);
+  const [archived, setArchived] = useState<string[]>(() => [...archivedOrders]);
+  const listed = useMemo(() => orders.filter((o) => !archived.includes(o.id)), [archived]);
 
   const match = (f: Filter) => (o: (typeof orders)[number]) =>
     f === "all" ? true : f === "unfulfilled" ? o.fulfilment[0] === "Not fulfilled" : f === "unpaid" ? o.payment[1] === "warning" || o.payment[1] === "danger" : o.payment[0] === "Refunded";
-  const count = (f: Filter) => orders.filter(match(f)).length;
+  const count = (f: Filter) => listed.filter(match(f)).length;
   const rows = useMemo(() => {
     const q = query.trim().toLowerCase();
-    return orders.filter(match(filter)).filter((o) => !q || `#${o.number} ${o.customer} ${o.channel}`.toLowerCase().includes(q));
-  }, [query, filter]);
+    return listed.filter(match(filter)).filter((o) => !q || `#${o.number} ${o.customer} ${o.channel}`.toLowerCase().includes(q));
+  }, [listed, query, filter]);
+  const archive = () => { selected.forEach((id) => archivedOrders.add(id)); setArchived([...archivedOrders]); setSelected([]); };
   const pick = (f: Filter) => (on: boolean) => setFilter(on ? f : "all");
   const revenue = orders.filter((o) => o.payment[0] === "Paid").reduce((a, o) => a + o.total, 0);
 
@@ -46,11 +49,12 @@ export function OrdersScreen() {
             <SearchInput label="Search orders" placeholder="Order number, customer or channel" value={query} onChange={setQuery} />
           </div>
           <div className="app-chips">
-            <FilterChip selected={filter === "all"} onToggle={() => setFilter("all")} count={orders.length}>All</FilterChip>
+            <FilterChip selected={filter === "all"} onToggle={() => setFilter("all")} count={listed.length}>All</FilterChip>
             <FilterChip selected={filter === "unfulfilled"} onToggle={pick("unfulfilled")} count={count("unfulfilled")}>Not fulfilled</FilterChip>
             <FilterChip selected={filter === "unpaid"} onToggle={pick("unpaid")} count={count("unpaid")}>Unpaid</FilterChip>
             <FilterChip selected={filter === "refunded"} onToggle={pick("refunded")} count={count("refunded")}>Refunded</FilterChip>
           </div>
+          {selected.length > 0 && <Button icon="archive" onClick={archive}>{`Archive orders (${selected.length})`}</Button>}
         </div>
         {rows.length ? <DataTable
           label="Orders"

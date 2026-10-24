@@ -62,6 +62,7 @@ export const orders: Order[] = seed.map(([number, date, customer, channel, p, f,
   total: items.reduce((a, [, , q, pr]) => a + q * pr, 0) + 4.9,
 }));
 export const findOrder = (id?: string) => orders.find((o) => o.id === id) ?? orders[0];
+export const archivedOrders = new Set<string>();
 export const findCustomer = (name: string) => customers.find((c) => c.name === name) ?? customers[0];
 export const findProduct = (handle?: string) => products.find((p) => p.handle === handle) ?? products[0];
 

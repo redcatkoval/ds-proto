@@ -21,7 +21,7 @@
   "lint": {
     "date": "2026-10-24",
     "fresh": 0,
-    "frozen": 1,
+    "frozen": 0,
     "excepted": 0,
     "unknown": 2
   },
@@ -1045,7 +1045,7 @@
         "Modal"
       ],
       "usage": {
-        "direct": 14,
+        "direct": 15,
         "files": [
           {
             "file": "apps/crm/src/screens/CustomersScreen.tsx",
@@ -1061,7 +1061,7 @@
           },
           {
             "file": "apps/crm/src/screens/OrdersScreen.tsx",
-            "count": 2
+            "count": 3
           },
           {
             "file": "apps/crm/src/screens/ProductScreen.tsx",
@@ -2259,8 +2259,8 @@
             "id": "no-debt",
             "label": "Нет нарушений в продукте",
             "level": "stable",
-            "result": "fail",
-            "note": "новых 0, в долге 1"
+            "result": "pass",
+            "note": "новых 0, в долге 0"
           },
           {
             "id": "reviewed",
@@ -2271,7 +2271,6 @@
           }
         ],
         "missing": [
-          "Нет нарушений в продукте",
           "Контракт сверен человеком"
         ]
       }
@@ -8857,7 +8856,7 @@
         "src/data.ts"
       ],
       "components": {
-        "Button": 2,
+        "Button": 3,
         "DataTable": 1,
         "EmptyState": 1,
         "FilterChip": 4,
@@ -9566,6 +9565,14 @@
       "state": "принят — стал компонентом DataTable",
       "where": "Список клиентов — вид «таблица» с колонками город, статус, последний контакт",
       "builtFrom": "сейчас ListItem в несколько строк"
+    },
+    {
+      "id": "C-002",
+      "file": "system/core/candidates/C-002-data-table-row-actions.md",
+      "title": "C-002 Действие в строке таблицы",
+      "state": "заявлен",
+      "where": "Orders — в строке заказа кнопка, которая убирает заказ из списка (Archive order)",
+      "builtFrom": "сейчас выбор строк флажками и кнопка «Archive orders» в полосе инструментов"
     }
   ],
   "history": [

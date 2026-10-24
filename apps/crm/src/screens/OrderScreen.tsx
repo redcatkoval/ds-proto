@@ -1,11 +1,12 @@
 import { useState } from "react";
-import { useParams } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import { Avatar, Button, DropdownMenu, IconButton, ListItem, Modal, Panel, StatusBadge, Tag, TextArea } from "@ds/ui";
 import { Page } from "../Page";
-import { findCustomer, findOrder, money } from "../data";
+import { archivedOrders, findCustomer, findOrder, money } from "../data";
 
 export function OrderScreen() {
   const { id } = useParams();
+  const go = useNavigate();
   const o = findOrder(id);
   const c = findCustomer(o.customer);
   const [note, setNote] = useState("Gift wrap requested. Leave at reception if nobody answers.");
@@ -22,7 +23,10 @@ export function OrderScreen() {
       actions={
         <>
           <IconButton icon="copy" variant="secondary" size="md" label={`Copy order number ${o.number}`} />
-          <DropdownMenu label="Order actions" items={[{ label: "Cancel order", icon: "x", destructive: true, onSelect: () => setConfirm(true) }]} />
+          <DropdownMenu label="Order actions" items={[
+            { label: "Archive order", icon: "archive", onSelect: () => { archivedOrders.add(o.id); go("/orders"); } },
+            { label: "Cancel order", icon: "x", destructive: true, onSelect: () => setConfirm(true) },
+          ]} />
         </>
       }
     >

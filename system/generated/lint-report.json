@@ -7,7 +7,7 @@
   "files": 11,
   "rulesRun": 20,
   "fresh": 0,
-  "frozen": 1,
+  "frozen": 0,
   "unknown": 2,
   "excepted": 0,
   "anchorsBroken": [],
@@ -300,19 +300,7 @@
       "message": "Цена не в евро"
     }
   ],
-  "findings": [
-    {
-      "rule": "dropdown-menu.min-two",
-      "component": "DropdownMenu",
-      "file": "apps/crm/src/screens/OrderScreen.tsx",
-      "line": 25,
-      "message": "В меню одно действие — это кнопка, а не меню (1 при минимуме 2)",
-      "snippet": "<DropdownMenu label=\"Order actions\" items={[{ label: \"Cancel order\", icon: \"x\", destructive: true, onSelect: () => setConfirm(true) }]} />",
-      "product": "admin",
-      "fingerprint": "5b415cc12bb8",
-      "state": "frozen"
-    }
-  ],
+  "findings": [],
   "notChecked": [
     {
       "rule": "select.max-options",
@@ -326,7 +314,7 @@
       "rule": "icon-button.label",
       "component": "IconButton",
       "file": "apps/crm/src/screens/OrderScreen.tsx",
-      "line": 24,
+      "line": 25,
       "why": "подпись — выражение, её значение узнаётся при отрисовке",
       "product": "admin"
     }
@@ -384,7 +372,7 @@
     "DropdownMenu": {
       "rules": 2,
       "fresh": 0,
-      "frozen": 1,
+      "frozen": 0,
       "unknown": 0,
       "broken": 0
     },
@@ -557,5 +545,5 @@
       "broken": 0
     }
   },
-  "inputs": "bdeb4b0a0ae6f4d4"
+  "inputs": "b93269b2c5b9d197"
 }

@@ -21,6 +21,7 @@ function hydrate(v: unknown): unknown {
 
 function fallback(p: Prop, name: string): unknown {
   if (p.default !== undefined) return p.default;
+  if (p.empty === "null") return null;
   if (!p.required) return undefined;
   switch (p.kind) {
     case "enum": return p.options?.[0];
@@ -126,7 +127,7 @@ function Control({ p, value, onChange }: { p: Prop; value: unknown; onChange: (v
     <label className="d-check"><input type="checkbox" checked={Boolean(value)} onChange={(e) => onChange(e.target.checked)} /> {value ? "да" : "нет"}</label>
   );
   if (p.kind === "number") return <input className="d-input" type="number" value={(value as number) ?? ""} onChange={(e) => onChange(e.target.value === "" ? undefined : Number(e.target.value))} aria-label={p.name} />;
-  if (p.kind === "string" || p.kind === "node") return <input className="d-input" value={(value as string) ?? ""} onChange={(e) => onChange(e.target.value || (p.required ? "" : undefined))} aria-label={p.name} />;
+  if (p.kind === "string" || p.kind === "node") return <input className="d-input" value={(value as string) ?? ""} onChange={(e) => onChange(e.target.value || (p.empty === "null" ? null : p.required && p.empty !== "undefined" ? "" : undefined))} aria-label={p.name} />;
   return <JsonControl value={value} onChange={onChange} name={p.name} />;
 }
 

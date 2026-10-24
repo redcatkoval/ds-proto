@@ -3,7 +3,7 @@
 export type Level = "draft" | "ready" | "stable";
 export type Result = "pass" | "fail" | "pending";
 export type Who = "машина" | "компонент" | "человек" | "совет" | "не указано";
-export type Prop = { name: string; type: string; required: boolean; doc: string; kind: string; options?: string[]; default?: unknown };
+export type Prop = { name: string; type: string; required: boolean; doc: string; kind: string; options?: string[]; default?: unknown; empty?: "null" | "undefined" };
 export type Check = { id: string; label: string; level: "ready" | "stable"; result: Result; note: string | null };
 export type Rule = { id: string; title: string; text: string; why: string | null; checkedBy: Who };
 export type Grade = "patch" | "minor" | "breaking";

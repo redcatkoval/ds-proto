@@ -8042,7 +8042,8 @@
           "type": "string | null",
           "required": true,
           "doc": "Что сделано: «Order number copied». null — ничего не показано, область для диктора остаётся на странице.",
-          "kind": "object"
+          "kind": "string",
+          "empty": "null"
         },
         {
           "name": "onHide",

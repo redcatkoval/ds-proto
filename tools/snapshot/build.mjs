@@ -88,6 +88,12 @@ function classify(typeNode, text) {
   if (ts.isUnionTypeNode(typeNode)) {
     const lits = typeNode.types.filter((t) => ts.isLiteralTypeNode(t) && ts.isStringLiteral(t.literal)).map((t) => t.literal.text);
     if (lits.length === typeNode.types.length) return { kind: "enum", options: lits };
+    // «текст или null», «текст или undefined» — тоже текст; empty — чем становится пустое поле
+    const isNull = (t) => ts.isLiteralTypeNode(t) && t.literal.kind === ts.SyntaxKind.NullKeyword;
+    const isUndef = (t) => t.kind === ts.SyntaxKind.UndefinedKeyword;
+    const rest = typeNode.types.filter((t) => !isNull(t) && !isUndef(t));
+    if (rest.length === 1 && rest[0].kind === ts.SyntaxKind.StringKeyword)
+      return { kind: "string", empty: typeNode.types.some(isNull) ? "null" : "undefined" };
   }
   if (typeNode.kind === ts.SyntaxKind.BooleanKeyword) return { kind: "boolean" };
   if (typeNode.kind === ts.SyntaxKind.StringKeyword) return { kind: "string" };

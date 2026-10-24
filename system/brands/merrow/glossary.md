@@ -14,7 +14,7 @@
 | Fulfil | собрать и отправить заказ | Process, Complete | британское написание |
 | Refund | вернуть деньги | Reimburse, Chargeback | Chargeback — только банковский спор |
 | Return | клиент возвращает товар | — | не путать с Refund: возврат товара ≠ возврат денег |
-| Archive | убрать из списков, можно вернуть | Hide, Disable | |
+| Archive | убрать из списков, можно вернуть | Hide, Disable | после действия: один — «Order archived», несколько — «3 orders archived» (число цифрами), число неизвестно — «Orders archived». «1 orders» не пишем: для одного — «Order archived» |
 | Delete | удалить без возможности вернуть | Remove | только для необратимого |
 | Copy | скопировать в буфер обмена, чтобы вставить в другом месте | — | после действия: «Order number copied». Новая запись из старой — не Copy, слова пока нет |
 | Draft | сохранено, но не опубликовано | Unpublished, Pending | |

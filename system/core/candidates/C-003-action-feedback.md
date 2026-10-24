@@ -46,10 +46,17 @@ const [toast, setToast] = useState<string | null>(null);
 «Order number copied» — копирование номера, «Order archived» — Archive order.
 Не пишем: «Copied!», «Successfully copied», «Done».
 
+Несколько заказов сразу (тон голоса, принцип 3 — цифры вместо прилагательных):
+«3 orders archived» — число известно, «Orders archived» — число неизвестно.
+Для одного — по-прежнему «Order archived», не «1 orders archived».
+Не пишем: «Several orders archived», «All selected orders have been archived».
+Записано в словарь Merrow, заметка к слову Archive, 2026-10-24.
+
 ## Доделать потом
 
 - [ ] Продукт: подключить Toast к копированию номера (Order detail) и к Archive order — команда продукта, отдельной сессией.
 - [x] Словарь Merrow: добавить слово Copy («скопировать в буфер обмена») — автор текстов Merrow, своей сессией. Добавлено 2026-10-24, колонка «не пишем» пустая.
+- [x] Словарь Merrow: фраза для архивирования нескольких заказов — «3 orders archived» / «Orders archived», заметка к слову Archive. Добавлено 2026-10-24, автор текстов Merrow.
 - [ ] Повтор того же сообщения: одинаковый текст дважды подряд диктор не прочтёт.
 - [ ] Очередь, если сообщения идут одно за другим.
 - [ ] Пауза таймера при наведении и фокусе.

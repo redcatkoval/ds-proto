@@ -13,18 +13,7 @@ export const rootOf = (input) => path.resolve(process.env.CLAUDE_PROJECT_DIR || 
 
 export const rel = (root, p) => (p ? path.relative(root, path.resolve(root, p)).split(path.sep).join("/") : "");
 
-// Что агенту трогать нельзя: это меняет человек. Кандидатов заводить можно.
-export const PROTECTED = [
-  { test: (r) => r === "system/core/baseline.json", who: "разрешённый долг записывает только человек" },
-  { test: (r) => r.startsWith("system/core/candidates/"), allow: true },
-  { test: (r) => r.startsWith("system/core/"), who: "ядро системы (контракты, правила, шаблоны, токены) меняет владелец системы" },
-  { test: (r) => r.startsWith("packages/ui/"), who: "компоненты меняются отдельным решением владельца системы, не по ходу экрана" },
-  { test: (r) => r.startsWith("system/generated/"), who: "эти файлы собирает npm run check, руками их не правят" },
-];
-export const protectedWhy = (r) => {
-  for (const p of PROTECTED) if (p.test(r)) return p.allow ? null : p.who;
-  return null;
-};
+// Что агенту трогать нельзя, зависит от роли — см. roles.mjs.
 
 // Состояние сессии — во временной папке, не в проекте.
 const stateDir = path.join(os.tmpdir(), "ds-proto-hooks");

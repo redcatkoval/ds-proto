@@ -4,8 +4,8 @@
   "totals": {
     "components": 33,
     "levels": {
-      "stable": 0,
-      "ready": 28,
+      "stable": 1,
+      "ready": 27,
       "draft": 5
     },
     "contracts": 28,
@@ -8102,10 +8102,10 @@
       },
       "contract": {
         "path": "system/core/contracts/toast.md",
-        "status": "черновик — написан агентом по кандидату C-003, человеком не сверен",
+        "status": "сверен человеком",
         "depth": "короткий — принят срочно, без очереди, паузы и вариантов",
-        "reviewed": null,
-        "reviewedRaw": null,
+        "reviewed": "Павел, владелец системы, 2026-10-24",
+        "reviewedRaw": "Павел, владелец системы, 2026-10-24",
         "summary": "Тихое действие сделано — одна короткая строка внизу, сама исчезает.",
         "blind": [
           "Тихое ли действие и не ошибка ли это — видно только по смыслу экрана.",
@@ -8144,7 +8144,7 @@
         ]
       },
       "maturity": {
-        "level": "ready",
+        "level": "stable",
         "checks": [
           {
             "id": "in-code",
@@ -8213,13 +8213,11 @@
             "id": "reviewed",
             "label": "Контракт сверен человеком",
             "level": "stable",
-            "result": "pending",
-            "note": "ждёт сверки"
+            "result": "pass",
+            "note": "Павел, владелец системы, 2026-10-24"
           }
         ],
-        "missing": [
-          "Контракт сверен человеком"
-        ]
+        "missing": []
       }
     },
     {
@@ -10131,6 +10129,16 @@
             "figma": "minor",
             "code": "minor"
           }
+        },
+        {
+          "component": "Toast",
+          "what": "Уровень: готов → стабилен",
+          "type": "Уровень",
+          "grade": {
+            "figma": "patch",
+            "code": "patch"
+          },
+          "detail": null
         }
       ]
     }

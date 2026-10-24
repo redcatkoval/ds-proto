@@ -24,7 +24,12 @@ export function OrdersScreen() {
     const q = query.trim().toLowerCase();
     return listed.filter(match(filter)).filter((o) => !q || `#${o.number} ${o.customer} ${o.channel}`.toLowerCase().includes(q));
   }, [listed, query, filter]);
-  const archive = () => { selected.forEach((id) => archivedOrders.add(id)); setArchived([...archivedOrders]); setSelected([]); };
+  const archive = () => {
+    selected.forEach((id) => archivedOrders.add(id));
+    setArchived([...archivedOrders]);
+    setToast(selected.length === 1 ? "Order archived" : `${selected.length} orders archived`);
+    setSelected([]);
+  };
   const pick = (f: Filter) => (on: boolean) => setFilter(on ? f : "all");
   const revenue = orders.filter((o) => o.payment[0] === "Paid").reduce((a, o) => a + o.total, 0);
 

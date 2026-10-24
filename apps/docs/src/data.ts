@@ -26,6 +26,10 @@ export const screenByKey = Object.fromEntries(snapshot.screens.map((s) => [s.key
 export const productById = Object.fromEntries(snapshot.products.map((p) => [p.id, p]));
 export const brandById = Object.fromEntries(snapshot.brands.map((b) => [b.id, b]));
 export const groups = [...new Set(snapshot.components.map((c) => c.group))];
+// закрытые кандидаты — сделан и отклонён; состояние — первое слово поля «Состояние»
+export const candidateClosed = (state: string) => /^(сделан|отклонён)/i.test(state.trim());
+export const openCandidates = snapshot.candidates.filter((c) => !candidateClosed(c.state));
+export const closedCandidates = snapshot.candidates.filter((c) => candidateClosed(c.state));
 
 // Тексты бренда — как есть, чтобы показать на витрине
 const brandFiles = import.meta.glob("../../../system/brands/*/*.md", { query: "?raw", import: "default", eager: true }) as Record<string, string>;

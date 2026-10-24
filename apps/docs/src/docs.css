@@ -430,6 +430,8 @@ a:hover .d-gnode rect { stroke: var(--color-stroke-strong); }
 .d-rulegroup--safe[open] summary::before { content: "▾"; }
 .d-rulegroup--safe[open] .d-rules { margin-top: var(--space-12); }
 .d-rulegroup--safe .d-rule { border-style: dashed; }
+.d-candclosed { margin-top: var(--space-12); }
+.d-candclosed .d-tablewrap { margin-bottom: 0; }
 .d-rule__tag { font-size: var(--font-size-12); padding: 1px 8px; border-radius: var(--radius-pill); background: var(--color-background-muted); color: var(--color-text-medium); }
 .d-rule__who { margin: var(--space-8) 0 0; font-size: var(--font-size-12); color: var(--color-text-soft); }
 .d-small { font-size: var(--font-size-12); }

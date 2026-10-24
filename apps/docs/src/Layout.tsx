@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { Link, NavLink, Outlet, useLocation } from "react-router-dom";
-import { groups, plural, snapshot } from "./data";
+import { groups, openCandidates, plural, snapshot } from "./data";
 import { useScope } from "./scope";
 
 const TOP = [
@@ -82,7 +82,7 @@ function Sidebar({ path }: { path: string }) {
         <div className="d-side__group">
           <Item to="/components" end>Все компоненты</Item>
           <Item to="/components/patterns">Шаблоны экранов<span className="d-side__count">{snapshot.patterns.length}</span></Item>
-          <Item to="/components/candidates">Кандидаты{snapshot.candidates.length ? <span className="d-side__count">{snapshot.candidates.length}</span> : null}</Item>
+          <Item to="/components/candidates">Кандидаты{openCandidates.length ? <span className="d-side__count">{openCandidates.length}</span> : null}</Item>
         </div>
         {groups.map((g) => {
           const items = list.filter((c) => c.group === g);

@@ -100,7 +100,7 @@ Claude Code запускает их без тебя — см. `.claude/settings.
 
 | роль | запуск | что можно сверх продукта | что закрыто |
 |---|---|---|---|
-| команда продукта | `claude` | — | `system/core/` (кроме `candidates/`), `packages/ui/`, `system/brands/`, `tools/hooks/`, `.claude/settings.json`, `baseline.json`, `system/generated/` |
+| команда продукта | `claude` | `.claude/skills/` | `system/core/` (кроме `candidates/`), `packages/ui/`, `system/brands/`, `tools/hooks/`, `.claude/` (кроме `skills/`, в том числе `settings.local.json`), `baseline.json`, `system/generated/` |
 | владелец бренда | `DS_ROLE=brand DS_BRAND=<id> claude` | `system/brands/<id>/` — только свой бренд | то же, что у продукта, и чужие бренды |
 | владелец системы | `DS_ROLE=owner claude` | всё остальное | `system/core/baseline.json`, `system/generated/` |
 
@@ -109,6 +109,8 @@ Claude Code запускает их без тебя — см. `.claude/settings.
 - `DS_ROLE=brand` без `DS_BRAND` или с брендом, которого нет в `system/brands/`, не включается:
   агент остаётся командой продукта, замок в отказе пишет почему. Так же с неизвестным `DS_ROLE`.
 - Новый бренд (новую папку в `system/brands/`) заводит владелец системы.
+- В начале сессии хук `tools/hooks/session-start.mjs` одним абзацем сообщает агенту его роль:
+  кто он, что ему можно и что закрыто.
 
 Новый экран — скилл `/new-screen`.
 

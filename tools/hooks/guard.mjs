@@ -2,7 +2,7 @@
 // PreToolUse: замок. Что закрыто, зависит от роли, с которой человек запустил Claude Code (см. roles.mjs).
 // Просьба в чате и режим без подтверждений роль не меняют.
 import { readInput, rel, rootOf } from "./lib.mjs";
-import { lockOf, refusal, roleOf, spots } from "./roles.mjs";
+import { lockOf, refusal, roleOf, spotRe, spots } from "./roles.mjs";
 
 const input = readInput();
 const root = rootOf(input);
@@ -19,9 +19,9 @@ if (input.tool_name === "Bash") {
   const probe = (p) => (p.endsWith("/") ? `${p}x` : p);
   const LOCKED = spots(root).filter((p) => lockOf(root, probe(p), role));
   // перенаправление вывода считается записью, только если ведёт в закрытый путь (2>/dev/null — нет)
-  const redirect = LOCKED.find((p) => new RegExp(`>>?\\s*["']?(\\./)?${p.replace(/[.*+?^${}()|[\]\\]/g, "\\$&")}`).test(cmd));
+  const redirect = LOCKED.find((p) => new RegExp(`>>?\\s*["']?(\\./)?${spotRe(p).source}`).test(cmd));
   const writer = /(\btee\b|\bsed\s+(-\w*\s+)*-i|\bperl\s+-\w*i|\bmv\b|\bcp\b|\brm\b|\btruncate\b|writeFile|write_text|open\([^)]*['"][wa]['"]|\bgit\s+(checkout|restore)\b)/.test(cmd);
-  const hit = redirect || (writer && LOCKED.find((p) => cmd.includes(p)));
+  const hit = redirect || (writer && LOCKED.find((p) => spotRe(p).test(cmd)));
   if (hit) deny(refusal(`Команда меняет ${hit}`, lockOf(root, probe(hit), role), role));
   process.exit(0);
 }

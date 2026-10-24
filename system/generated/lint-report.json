@@ -5,7 +5,7 @@
     "apps/crm/src"
   ],
   "files": 11,
-  "rulesRun": 20,
+  "rulesRun": 21,
   "fresh": 0,
   "frozen": 0,
   "unknown": 2,
@@ -182,6 +182,16 @@
         "quote": "Среди соседей одного родителя не больше трёх меток."
       },
       "contract": "system/core/contracts/tag.md"
+    },
+    {
+      "id": "toast.one-per-screen",
+      "component": "Toast",
+      "kind": "max-per-file",
+      "anchor": {
+        "section": "2",
+        "quote": "На одном экране не больше одного Toast."
+      },
+      "contract": "system/core/contracts/toast.md"
     },
     {
       "id": "toggle.min-options",
@@ -530,6 +540,13 @@
       "unknown": 0,
       "broken": 0
     },
+    "Toast": {
+      "rules": 1,
+      "fresh": 0,
+      "frozen": 0,
+      "unknown": 0,
+      "broken": 0
+    },
     "Toggle": {
       "rules": 2,
       "fresh": 0,
@@ -545,5 +562,5 @@
       "broken": 0
     }
   },
-  "inputs": "0ad1255246522ab9"
+  "inputs": "c0832bb0adcc9882"
 }

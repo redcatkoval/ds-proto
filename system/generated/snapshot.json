@@ -2,13 +2,13 @@
   "generated": "2026-10-24",
   "about": "Снимок системы. Собран tools/snapshot/build.mjs из кода; руками не правится. Источник для витрины и для агента.",
   "totals": {
-    "components": 32,
+    "components": 33,
     "levels": {
       "stable": 0,
-      "ready": 27,
+      "ready": 28,
       "draft": 5
     },
-    "contracts": 27,
+    "contracts": 28,
     "screens": 7,
     "semanticTokens": 65,
     "brands": 1,
@@ -7989,6 +7989,211 @@
       }
     },
     {
+      "name": "Toast",
+      "slug": "toast",
+      "group": "Обратная связь",
+      "description": "Короткое сообщение внизу экрана о том, что тихое действие сделано: номер скопирован, заказ в архиве. Исчезает само через 4 секунды и читается диктором. Без кнопок и вариантов.",
+      "design": "in-progress",
+      "guidance": {
+        "do": [
+          "После действия, которое ничего не меняет на экране: скопировать, отправить в архив"
+        ],
+        "dont": [
+          "Ошибка — нужен ErrorMessage рядом с местом, где исправлять",
+          "Действие, которое требует решения: в Toast нет кнопок",
+          "Подтверждать то, что и так видно на экране"
+        ]
+      },
+      "behaviour": [
+        "Один на экран: ставится один раз и не убирается, меняется только message",
+        "Исчезает сам через 4 секунды и вызывает onHide",
+        "Читается диктором вежливо, не перебивая",
+        "Появляется без движения при «уменьшить движение»"
+      ],
+      "accessibility": "role=status и aria-live=polite: область есть на странице всегда, поэтому диктор слышит новый текст.",
+      "codegen": [
+        "Один Toast в конце экрана: <Toast message={toast} onHide={() => setToast(null)} />",
+        "message — что сделано, объект + причастие: «Order number copied», «Order archived»"
+      ],
+      "examples": [],
+      "ruleExamples": {},
+      "strings": [],
+      "files": {
+        "component": "packages/ui/src/components/toast/Toast.tsx",
+        "styles": "packages/ui/src/components/toast/toast.css",
+        "meta": "packages/ui/src/components/toast/meta.json"
+      },
+      "props": [
+        {
+          "name": "message",
+          "type": "string | null",
+          "required": true,
+          "doc": "Что сделано: «Order number copied». null — ничего не показано, область для диктора остаётся на странице.",
+          "kind": "object"
+        },
+        {
+          "name": "onHide",
+          "type": "() => void",
+          "required": true,
+          "doc": "Сообщение исчезло само. Здесь продукт обнуляет message.",
+          "kind": "function"
+        }
+      ],
+      "api": {
+        "shape": "closed",
+        "open": [],
+        "inlineStyles": []
+      },
+      "tokens": {
+        "used": [
+          "--color-surface-raised",
+          "--color-text-strong",
+          "--font-size-14",
+          "--radius-surface",
+          "--shadow-overlay",
+          "--space-12",
+          "--space-16",
+          "--space-24",
+          "--space-32"
+        ],
+        "violations": []
+      },
+      "builtFrom": [],
+      "brings": [],
+      "usedIn": [],
+      "usage": {
+        "direct": 0,
+        "files": [],
+        "screens": [],
+        "screensIndirect": []
+      },
+      "impact": {
+        "components": [],
+        "screens": []
+      },
+      "contract": {
+        "path": "system/core/contracts/toast.md",
+        "status": "черновик — написан агентом по кандидату C-003, человеком не сверен",
+        "depth": "короткий — принят срочно, без очереди, паузы и вариантов",
+        "reviewed": null,
+        "reviewedRaw": null,
+        "summary": "Тихое действие сделано — одна короткая строка внизу, сама исчезает.",
+        "blind": [
+          "Тихое ли действие и не ошибка ли это — видно только по смыслу экрана.",
+          "Формулировку машина не оценит.",
+          "Одинаковый текст дважды подряд диктор не повторит — см. C-003, «Доделать потом»."
+        ],
+        "rules": [
+          {
+            "id": "1",
+            "title": "Только после тихого действия",
+            "text": "Toast ставят, когда действие ничего не изменило на экране: скопировать, отправить в архив. Ошибку показывает ErrorMessage, а то, что требует решения, — не Toast.",
+            "why": "Без отклика человек не знает, сработало ли нажатие. Ошибка в Toast исчезнет раньше, чем её исправят.",
+            "checkedBy": "человек"
+          },
+          {
+            "id": "2",
+            "title": "Один Toast на экран",
+            "text": "На одном экране не больше одного Toast.",
+            "why": "Toast ставится один раз и не убирается — меняется только message. Второй перекроет первый, а диктор прочтёт оба.",
+            "checkedBy": "машина"
+          },
+          {
+            "id": "3",
+            "title": "Что сделано — объект и причастие",
+            "text": "Сообщение — одна короткая строка: что сделано, без восклицаний и «Successfully».",
+            "why": "Сообщение видно 4 секунды и звучит для диктора — дочитать надо успеть.",
+            "checkedBy": "совет"
+          },
+          {
+            "id": "4",
+            "title": "Исчезает сам и звучит для диктора",
+            "text": "Через 4 секунды сообщение исчезает и вызывает onHide. Кнопок, иконок и вариантов нет.",
+            "why": "Область role=status всегда на странице, поэтому диктор слышит новый текст. Без кнопок на Toast не надо переводить фокус.",
+            "checkedBy": "компонент"
+          }
+        ]
+      },
+      "maturity": {
+        "level": "ready",
+        "checks": [
+          {
+            "id": "in-code",
+            "label": "Есть в коде",
+            "level": "ready",
+            "result": "pass",
+            "note": null
+          },
+          {
+            "id": "description",
+            "label": "Есть описание",
+            "level": "ready",
+            "result": "pass",
+            "note": null
+          },
+          {
+            "id": "usage",
+            "label": "Написано, когда применять и когда нет",
+            "level": "ready",
+            "result": "pass",
+            "note": null
+          },
+          {
+            "id": "contract",
+            "label": "Есть контракт",
+            "level": "ready",
+            "result": "pass",
+            "note": null
+          },
+          {
+            "id": "tokens",
+            "label": "Только семантические токены",
+            "level": "ready",
+            "result": "pass",
+            "note": null
+          },
+          {
+            "id": "closed-api",
+            "label": "Закрытый набор свойств, без className и style",
+            "level": "ready",
+            "result": "pass",
+            "note": null
+          },
+          {
+            "id": "codegen",
+            "label": "Есть заметки для генерации кода",
+            "level": "stable",
+            "result": "pass",
+            "note": null
+          },
+          {
+            "id": "enforced",
+            "label": "Хотя бы одно правило держит машина или сам компонент",
+            "level": "stable",
+            "result": "pass",
+            "note": "машина: 1, компонент: 1"
+          },
+          {
+            "id": "no-debt",
+            "label": "Нет нарушений в продукте",
+            "level": "stable",
+            "result": "pass",
+            "note": "новых 0, в долге 0"
+          },
+          {
+            "id": "reviewed",
+            "label": "Контракт сверен человеком",
+            "level": "stable",
+            "result": "pending",
+            "note": "ждёт сверки"
+          }
+        ],
+        "missing": [
+          "Контракт сверен человеком"
+        ]
+      }
+    },
+    {
       "name": "Toggle",
       "slug": "toggle",
       "group": "Выбор",
@@ -8678,6 +8883,7 @@
         "Tabs",
         "Tag",
         "TextInput",
+        "Toast",
         "Toggle",
         "TopNavigation"
       ],
@@ -9172,6 +9378,7 @@
       "StatusBadge",
       "Switch",
       "TextInput",
+      "Toast",
       "Toggle",
       "TopNavigation"
     ],
@@ -9231,6 +9438,7 @@
       "Switch",
       "Tabs",
       "TextInput",
+      "Toast",
       "Toggle",
       "TopNavigation"
     ],
@@ -9355,7 +9563,8 @@
       "Select",
       "Switch",
       "Tabs",
-      "TextInput"
+      "TextInput",
+      "Toast"
     ],
     "--font-text": [
       "Button"
@@ -9394,6 +9603,7 @@
       "Tabs",
       "TextArea",
       "TextInput",
+      "Toast",
       "Toggle",
       "TopNavigation"
     ],
@@ -9406,7 +9616,8 @@
       "Modal",
       "Panel",
       "RecordList",
-      "Spinner"
+      "Spinner",
+      "Toast"
     ],
     "--space-6": [
       "Button",
@@ -9453,11 +9664,13 @@
       "Modal",
       "Panel",
       "RecordList",
-      "TextInput"
+      "TextInput",
+      "Toast"
     ],
     "--shadow-overlay": [
       "DropdownMenu",
-      "Modal"
+      "Modal",
+      "Toast"
     ],
     "--font-display": [
       "EmptyState",
@@ -9471,6 +9684,7 @@
       "Modal",
       "Panel",
       "Spinner",
+      "Toast",
       "TopNavigation"
     ],
     "--space-48": [
@@ -9555,6 +9769,9 @@
     ],
     "--color-tag-red-text": [
       "Tag"
+    ],
+    "--space-32": [
+      "Toast"
     ]
   },
   "candidates": [
@@ -9578,7 +9795,7 @@
       "id": "C-003",
       "file": "system/core/candidates/C-003-action-feedback.md",
       "title": "C-003 Подтверждение сделанного действия",
-      "state": "заявлен",
+      "state": "принят, срочно — 2026-10-24, владелец системы; появился черновик Toast",
       "where": "Order detail — иконка копирования рядом с номером заказа: после нажатия сказать, что номер скопирован",
       "builtFrom": "сейчас ничего — номер уходит в буфер молча"
     }
@@ -9868,6 +10085,15 @@
         },
         {
           "component": "TopNavigation",
+          "what": "Появился в системе",
+          "type": "Новый",
+          "grade": {
+            "figma": "minor",
+            "code": "minor"
+          }
+        },
+        {
+          "component": "Toast",
           "what": "Появился в системе",
           "type": "Новый",
           "grade": {

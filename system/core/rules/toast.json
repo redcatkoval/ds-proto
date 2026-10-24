@@ -1,0 +1,16 @@
+{
+  "component": "Toast",
+  "contract": "system/core/contracts/toast.md",
+  "rules": [
+    {
+      "id": "toast.one-per-screen",
+      "anchor": {
+        "section": "2",
+        "quote": "На одном экране не больше одного Toast."
+      },
+      "kind": "max-per-file",
+      "max": 1,
+      "message": "Больше одного Toast на экране"
+    }
+  ]
+}

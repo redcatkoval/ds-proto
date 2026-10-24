@@ -30,6 +30,7 @@ export * from "./components/tabs";
 export * from "./components/tag";
 export * from "./components/text-area";
 export * from "./components/text-input";
+export * from "./components/toast";
 export * from "./components/toggle";
 export * from "./components/top-navigation";
 export { Icon, iconNames, iconGroups, type IconName } from "./icons/icons";

@@ -1,0 +1,30 @@
+{
+  "name": "Switch",
+  "group": "Выбор",
+  "description": "Включает настройку сразу, без кнопки «Save».",
+  "design": "finished",
+  "usage": {
+    "do": [
+      "Настройка, которая действует сразу"
+    ],
+    "dont": [
+      "В форме с кнопкой сохранения — это Checkbox"
+    ]
+  },
+  "behaviour": [
+    "Диктор слышит «включено/выключено»"
+  ],
+  "accessibility": "role=switch.",
+  "codegen": [
+    "Подпись — что включаем"
+  ],
+  "examples": [
+    {
+      "title": "Notifications",
+      "props": {
+        "label": "Notify me about low stock",
+        "checked": true
+      }
+    }
+  ]
+}

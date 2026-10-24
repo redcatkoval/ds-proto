@@ -1,0 +1,561 @@
+{
+  "date": "2026-10-24",
+  "about": "Отчёт линтера контрактов. Пишется tools/lint/lint.mjs; руками не правится.",
+  "scope": [
+    "apps/crm/src"
+  ],
+  "files": 11,
+  "rulesRun": 20,
+  "fresh": 0,
+  "frozen": 1,
+  "unknown": 2,
+  "excepted": 0,
+  "anchorsBroken": [],
+  "staleBaseline": [],
+  "rules": [
+    {
+      "id": "button.one-primary",
+      "component": "Button",
+      "kind": "max-per-parent",
+      "anchor": {
+        "section": "1",
+        "quote": "Среди кнопок одного ряда только одна основная (variant=\"primary\"). Остальные — secondary или ghost."
+      },
+      "contract": "system/core/contracts/button.md"
+    },
+    {
+      "id": "button.submit-last",
+      "component": "Button",
+      "kind": "order-last",
+      "anchor": {
+        "section": "2",
+        "quote": "Кнопка с type=\"submit\" стоит последней в своём ряду: сначала «Cancel», потом «Save»."
+      },
+      "contract": "system/core/contracts/button.md"
+    },
+    {
+      "id": "checkbox.label",
+      "component": "Checkbox",
+      "kind": "attr-nonempty",
+      "anchor": {
+        "section": "1",
+        "quote": "label не пустой, даже когда он спрятан через hideLabel."
+      },
+      "contract": "system/core/contracts/checkbox.md"
+    },
+    {
+      "id": "data-table.max-columns",
+      "component": "DataTable",
+      "kind": "max-items",
+      "anchor": {
+        "section": "1",
+        "quote": "В columns не больше семи столбцов. Остальное — в карточку записи."
+      },
+      "contract": "system/core/contracts/data-table.md"
+    },
+    {
+      "id": "dropdown-menu.min-two",
+      "component": "DropdownMenu",
+      "kind": "min-items",
+      "anchor": {
+        "section": "1",
+        "quote": "В items не меньше двух действий. Одно действие — это Button, а не меню."
+      },
+      "contract": "system/core/contracts/dropdown-menu.md"
+    },
+    {
+      "id": "dropdown-menu.destructive-last",
+      "component": "DropdownMenu",
+      "kind": "destructive-last",
+      "anchor": {
+        "section": "2",
+        "quote": "Пункты с destructive: true идут в конце списка."
+      },
+      "contract": "system/core/contracts/dropdown-menu.md"
+    },
+    {
+      "id": "filter-chip.max-five",
+      "component": "FilterChip",
+      "kind": "max-per-parent",
+      "anchor": {
+        "section": "1",
+        "quote": "Среди соседей не больше пяти чипов."
+      },
+      "contract": "system/core/contracts/filter-chip.md"
+    },
+    {
+      "id": "icon-button.label",
+      "component": "IconButton",
+      "kind": "attr-nonempty",
+      "anchor": {
+        "section": "1",
+        "quote": "label не пустой: он звучит для диктора и всплывает при наведении."
+      },
+      "contract": "system/core/contracts/icon-button.md"
+    },
+    {
+      "id": "label.not-beside-field",
+      "component": "Label",
+      "kind": "forbidden-sibling",
+      "anchor": {
+        "section": "1",
+        "quote": "Label не ставится соседом TextInput, TextArea или Select: подпись у них уже внутри."
+      },
+      "contract": "system/core/contracts/label.md"
+    },
+    {
+      "id": "mini-card.max-four",
+      "component": "MiniCard",
+      "kind": "max-per-parent",
+      "anchor": {
+        "section": "1",
+        "quote": "Среди соседей не больше четырёх карточек."
+      },
+      "contract": "system/core/contracts/mini-card.md"
+    },
+    {
+      "id": "search-input.one-per-screen",
+      "component": "SearchInput",
+      "kind": "max-per-file",
+      "anchor": {
+        "section": "1",
+        "quote": "На одном экране не больше одного SearchInput."
+      },
+      "contract": "system/core/contracts/search-input.md"
+    },
+    {
+      "id": "select.max-options",
+      "component": "Select",
+      "kind": "max-items",
+      "anchor": {
+        "section": "1",
+        "quote": "В options не больше пятнадцати вариантов."
+      },
+      "contract": "system/core/contracts/select.md"
+    },
+    {
+      "id": "side-navigation.max-items",
+      "component": "SideNavigation",
+      "kind": "max-items",
+      "anchor": {
+        "section": "1",
+        "quote": "В items не больше восьми пунктов."
+      },
+      "contract": "system/core/contracts/side-navigation.md"
+    },
+    {
+      "id": "side-navigation.max-footer",
+      "component": "SideNavigation",
+      "kind": "max-items",
+      "anchor": {
+        "section": "2",
+        "quote": "В footerItems не больше трёх пунктов."
+      },
+      "contract": "system/core/contracts/side-navigation.md"
+    },
+    {
+      "id": "tabs.min-items",
+      "component": "Tabs",
+      "kind": "min-items",
+      "anchor": {
+        "section": "1",
+        "quote": "В items от двух до шести вкладок."
+      },
+      "contract": "system/core/contracts/tabs.md"
+    },
+    {
+      "id": "tabs.max-items",
+      "component": "Tabs",
+      "kind": "max-items",
+      "anchor": {
+        "section": "1",
+        "quote": "В items от двух до шести вкладок."
+      },
+      "contract": "system/core/contracts/tabs.md"
+    },
+    {
+      "id": "tag.max-three",
+      "component": "Tag",
+      "kind": "max-per-parent",
+      "anchor": {
+        "section": "1",
+        "quote": "Среди соседей одного родителя не больше трёх меток."
+      },
+      "contract": "system/core/contracts/tag.md"
+    },
+    {
+      "id": "toggle.min-options",
+      "component": "Toggle",
+      "kind": "min-items",
+      "anchor": {
+        "section": "1",
+        "quote": "В options от двух до четырёх вариантов."
+      },
+      "contract": "system/core/contracts/toggle.md"
+    },
+    {
+      "id": "toggle.max-options",
+      "component": "Toggle",
+      "kind": "max-items",
+      "anchor": {
+        "section": "1",
+        "quote": "В options от двух до четырёх вариантов."
+      },
+      "contract": "system/core/contracts/toggle.md"
+    },
+    {
+      "id": "top-navigation.max-six",
+      "component": "TopNavigation",
+      "kind": "max-items",
+      "anchor": {
+        "section": "1",
+        "quote": "В items не больше шести пунктов."
+      },
+      "contract": "system/core/contracts/top-navigation.md"
+    }
+  ],
+  "codeRules": [
+    {
+      "id": "code.no-raw-elements",
+      "level": "core",
+      "scope": "все продукты",
+      "file": "system/core/code-rules.json",
+      "kind": "no-raw-elements",
+      "title": "Без голых элементов, если есть компонент",
+      "why": "Голая кнопка или таблица выглядит почти как системная, но не обновляется вместе с системой и не соблюдает её правила.",
+      "addedBy": "владелец системы",
+      "since": "2026-10-24",
+      "message": "Голый элемент вместо компонента системы"
+    },
+    {
+      "id": "code.no-inline-style",
+      "level": "core",
+      "scope": "все продукты",
+      "file": "system/core/code-rules.json",
+      "kind": "no-inline-style",
+      "title": "Без инлайн-стилей",
+      "why": "Инлайн-стиль не видят ни токены, ни бренд, ни проверка — это вид в обход системы.",
+      "addedBy": "владелец системы",
+      "since": "2026-10-24",
+      "message": "Инлайн-стиль в коде продукта"
+    },
+    {
+      "id": "code.css-tokens",
+      "level": "core",
+      "scope": "все продукты",
+      "file": "system/core/code-rules.json",
+      "kind": "css-tokens",
+      "title": "В стилях продукта — только существующие токены",
+      "why": "Цвет числом не перекрасится вместе с брендом и темой. Выдуманный токен молча не сработает.",
+      "addedBy": "владелец системы",
+      "since": "2026-10-24",
+      "message": "Стиль мимо токенов"
+    },
+    {
+      "id": "code.screen-size",
+      "level": "core",
+      "scope": "все продукты",
+      "file": "system/core/code-rules.json",
+      "kind": "max-lines",
+      "title": "Экран — не длиннее 250 строк",
+      "why": "Длинный экран — признак, что раскладка не по шаблону или данные лежат внутри экрана. Его трудно читать и человеку, и агенту.",
+      "addedBy": "владелец системы",
+      "since": "2026-10-24",
+      "message": "Файл экрана слишком длинный — разделите или вынесите данные"
+    },
+    {
+      "id": "code.screens-registered",
+      "level": "core",
+      "scope": "все продукты",
+      "file": "system/core/code-rules.json",
+      "kind": "screen-registry",
+      "title": "Экран — в product.json и в маршрутах",
+      "why": "Экран без строки в product.json не видят снимок, витрина и журнал продукта. Строка без файла или без маршрута — экран, которого нет.",
+      "addedBy": "владелец системы",
+      "since": "2026-10-24",
+      "message": "Экраны, product.json и маршруты разошлись"
+    },
+    {
+      "id": "merrow.glossary",
+      "level": "brand",
+      "scope": "продукты бренда merrow",
+      "file": "system/brands/merrow/rules.json",
+      "kind": "glossary",
+      "title": "Слова — из словаря бренда",
+      "why": "Одно понятие — одно слово во всех продуктах бренда. Колонка «не пишем» из словаря становится проверкой.",
+      "addedBy": "автор текстов Merrow",
+      "since": "2026-10-24",
+      "message": "Слово не из словаря бренда"
+    },
+    {
+      "id": "admin.currency-eur",
+      "level": "product",
+      "scope": "Merrow Admin",
+      "file": "apps/crm/rules.json",
+      "kind": "forbidden-text",
+      "title": "Цены — только в евро",
+      "why": "Магазины Merrow Admin продают в еврозоне. Цена в долларах или фунтах в интерфейсе — ошибка данных или копипаста.",
+      "addedBy": "команда Merrow Admin",
+      "since": "2026-10-24",
+      "message": "Цена не в евро"
+    }
+  ],
+  "findings": [
+    {
+      "rule": "dropdown-menu.min-two",
+      "component": "DropdownMenu",
+      "file": "apps/crm/src/screens/OrderScreen.tsx",
+      "line": 25,
+      "message": "В меню одно действие — это кнопка, а не меню (1 при минимуме 2)",
+      "snippet": "<DropdownMenu label=\"Order actions\" items={[{ label: \"Cancel order\", icon: \"x\", destructive: true, onSelect: () => setConfirm(true) }]} />",
+      "product": "admin",
+      "fingerprint": "5b415cc12bb8",
+      "state": "frozen"
+    }
+  ],
+  "notChecked": [
+    {
+      "rule": "select.max-options",
+      "component": "Select",
+      "file": "apps/crm/src/screens/InventoryScreen.tsx",
+      "line": 19,
+      "why": "массив передан не литералом — число элементов узнаётся при отрисовке",
+      "product": "admin"
+    },
+    {
+      "rule": "icon-button.label",
+      "component": "IconButton",
+      "file": "apps/crm/src/screens/OrderScreen.tsx",
+      "line": 24,
+      "why": "подпись — выражение, её значение узнаётся при отрисовке",
+      "product": "admin"
+    }
+  ],
+  "components": {
+    "Avatar": {
+      "rules": 0,
+      "fresh": 0,
+      "frozen": 0,
+      "unknown": 0,
+      "broken": 0
+    },
+    "BottomNavigation": {
+      "rules": 0,
+      "fresh": 0,
+      "frozen": 0,
+      "unknown": 0,
+      "broken": 0
+    },
+    "Breadcrumbs": {
+      "rules": 0,
+      "fresh": 0,
+      "frozen": 0,
+      "unknown": 0,
+      "broken": 0
+    },
+    "Button": {
+      "rules": 2,
+      "fresh": 0,
+      "frozen": 0,
+      "unknown": 0,
+      "broken": 0
+    },
+    "Checkbox": {
+      "rules": 1,
+      "fresh": 0,
+      "frozen": 0,
+      "unknown": 0,
+      "broken": 0
+    },
+    "DataTable": {
+      "rules": 1,
+      "fresh": 0,
+      "frozen": 0,
+      "unknown": 0,
+      "broken": 0
+    },
+    "DropdownInput": {
+      "rules": 0,
+      "fresh": 0,
+      "frozen": 0,
+      "unknown": 0,
+      "broken": 0
+    },
+    "DropdownMenu": {
+      "rules": 2,
+      "fresh": 0,
+      "frozen": 1,
+      "unknown": 0,
+      "broken": 0
+    },
+    "EmptyState": {
+      "rules": 0,
+      "fresh": 0,
+      "frozen": 0,
+      "unknown": 0,
+      "broken": 0
+    },
+    "ErrorMessage": {
+      "rules": 0,
+      "fresh": 0,
+      "frozen": 0,
+      "unknown": 0,
+      "broken": 0
+    },
+    "FilterChip": {
+      "rules": 1,
+      "fresh": 0,
+      "frozen": 0,
+      "unknown": 0,
+      "broken": 0
+    },
+    "IconButton": {
+      "rules": 1,
+      "fresh": 0,
+      "frozen": 0,
+      "unknown": 1,
+      "broken": 0
+    },
+    "Label": {
+      "rules": 1,
+      "fresh": 0,
+      "frozen": 0,
+      "unknown": 0,
+      "broken": 0
+    },
+    "ListItem": {
+      "rules": 0,
+      "fresh": 0,
+      "frozen": 0,
+      "unknown": 0,
+      "broken": 0
+    },
+    "MiniCard": {
+      "rules": 1,
+      "fresh": 0,
+      "frozen": 0,
+      "unknown": 0,
+      "broken": 0
+    },
+    "Modal": {
+      "rules": 0,
+      "fresh": 0,
+      "frozen": 0,
+      "unknown": 0,
+      "broken": 0
+    },
+    "NavigationItem": {
+      "rules": 0,
+      "fresh": 0,
+      "frozen": 0,
+      "unknown": 0,
+      "broken": 0
+    },
+    "Panel": {
+      "rules": 0,
+      "fresh": 0,
+      "frozen": 0,
+      "unknown": 0,
+      "broken": 0
+    },
+    "RecordList": {
+      "rules": 0,
+      "fresh": 0,
+      "frozen": 0,
+      "unknown": 0,
+      "broken": 0
+    },
+    "SearchInput": {
+      "rules": 1,
+      "fresh": 0,
+      "frozen": 0,
+      "unknown": 0,
+      "broken": 0
+    },
+    "Select": {
+      "rules": 1,
+      "fresh": 0,
+      "frozen": 0,
+      "unknown": 1,
+      "broken": 0
+    },
+    "SelectList": {
+      "rules": 0,
+      "fresh": 0,
+      "frozen": 0,
+      "unknown": 0,
+      "broken": 0
+    },
+    "SideNavigation": {
+      "rules": 2,
+      "fresh": 0,
+      "frozen": 0,
+      "unknown": 0,
+      "broken": 0
+    },
+    "Spinner": {
+      "rules": 0,
+      "fresh": 0,
+      "frozen": 0,
+      "unknown": 0,
+      "broken": 0
+    },
+    "StatusBadge": {
+      "rules": 0,
+      "fresh": 0,
+      "frozen": 0,
+      "unknown": 0,
+      "broken": 0
+    },
+    "Switch": {
+      "rules": 0,
+      "fresh": 0,
+      "frozen": 0,
+      "unknown": 0,
+      "broken": 0
+    },
+    "Tabs": {
+      "rules": 2,
+      "fresh": 0,
+      "frozen": 0,
+      "unknown": 0,
+      "broken": 0
+    },
+    "Tag": {
+      "rules": 1,
+      "fresh": 0,
+      "frozen": 0,
+      "unknown": 0,
+      "broken": 0
+    },
+    "TextArea": {
+      "rules": 0,
+      "fresh": 0,
+      "frozen": 0,
+      "unknown": 0,
+      "broken": 0
+    },
+    "TextInput": {
+      "rules": 0,
+      "fresh": 0,
+      "frozen": 0,
+      "unknown": 0,
+      "broken": 0
+    },
+    "Toggle": {
+      "rules": 2,
+      "fresh": 0,
+      "frozen": 0,
+      "unknown": 0,
+      "broken": 0
+    },
+    "TopNavigation": {
+      "rules": 1,
+      "fresh": 0,
+      "frozen": 0,
+      "unknown": 0,
+      "broken": 0
+    }
+  },
+  "inputs": "bdeb4b0a0ae6f4d4"
+}

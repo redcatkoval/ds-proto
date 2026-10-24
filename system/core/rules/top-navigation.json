@@ -1,0 +1,17 @@
+{
+  "component": "TopNavigation",
+  "contract": "system/core/contracts/top-navigation.md",
+  "rules": [
+    {
+      "id": "top-navigation.max-six",
+      "anchor": {
+        "section": "1",
+        "quote": "В items не больше шести пунктов."
+      },
+      "kind": "max-items",
+      "prop": "items",
+      "max": 6,
+      "message": "В навигации больше шести разделов"
+    }
+  ]
+}

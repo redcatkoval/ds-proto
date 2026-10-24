@@ -1,0 +1,46 @@
+{
+  "name": "Tabs",
+  "group": "Навигация",
+  "description": "Вкладки внутри страницы: разные части одной записи. Содержимое под вкладками рисует продукт.",
+  "design": "finished",
+  "usage": {
+    "do": [
+      "Части записи: «Details / Variants / Inventory»"
+    ],
+    "dont": [
+      "Вид одного и того же — это Toggle",
+      "Больше шести вкладок"
+    ]
+  },
+  "behaviour": [
+    "Стрелки влево-вправо переключают вкладки"
+  ],
+  "accessibility": "tablist, tab, aria-selected.",
+  "codegen": [
+    "Счётчик — сколько внутри: «Variants 4»"
+  ],
+  "examples": [
+    {
+      "title": "Product",
+      "props": {
+        "label": "Product sections",
+        "value": "details",
+        "items": [
+          {
+            "id": "details",
+            "label": "Details"
+          },
+          {
+            "id": "variants",
+            "label": "Variants",
+            "count": 4
+          },
+          {
+            "id": "media",
+            "label": "Media"
+          }
+        ]
+      }
+    }
+  ]
+}

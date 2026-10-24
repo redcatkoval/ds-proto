@@ -1,0 +1,23 @@
+{
+  "name": "@ds/admin",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "vite --port 5173 --strictPort",
+    "build": "vite build"
+  },
+  "dependencies": {
+    "@ds/ui": "*",
+    "@fontsource-variable/fraunces": "5.3.0",
+    "@fontsource-variable/inter": "5.3.0",
+    "@fontsource-variable/inter-tight": "5.3.0",
+    "react": "19.3.1",
+    "react-dom": "19.3.1",
+    "react-router-dom": "7.18.4"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-react": "6.1.2",
+    "vite": "8.3.5"
+  },
+  "description": "Merrow Admin \u2014 \u043f\u0440\u043e\u0434\u0443\u043a\u0442 \u0431\u0440\u0435\u043d\u0434\u0430 Merrow"
+}

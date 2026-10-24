@@ -1,0 +1,6 @@
+.ds-modal { width: min(520px, calc(100vw - 32px)); padding: 0; border: 0; border-radius: var(--radius-surface); background: var(--color-surface-raised); color: var(--color-text-strong); box-shadow: var(--shadow-overlay); }
+.ds-modal::backdrop { background: var(--color-background-overlay); }
+.ds-modal__header { display: flex; align-items: center; justify-content: space-between; padding: var(--space-16) var(--space-16) var(--space-8) var(--space-24); }
+.ds-modal__title { margin: 0; font-family: var(--font-display); font-size: var(--font-size-18); font-weight: var(--font-weight-semibold); }
+.ds-modal__body { padding: var(--space-8) var(--space-24) var(--space-16); }
+.ds-modal__footer { display: flex; justify-content: flex-end; gap: var(--space-8); padding: var(--space-16) var(--space-24); border-top: 1px solid var(--color-stroke-soft); }

@@ -1,0 +1,92 @@
+{
+  "name": "Tag",
+  "group": "Данные",
+  "description": "Короткая метка категории: «Wholesale», «Gift». Не статус процесса — для статуса есть StatusBadge.",
+  "design": "finished",
+  "usage": {
+    "do": [
+      "Категория или признак записи: «Wholesale», «VIP», «Gift»",
+      "Одно значение — одна метка"
+    ],
+    "dont": [
+      "Статус заказа или оплаты — это StatusBadge",
+      "Нажимаемая метка — для фильтра есть FilterChip",
+      "Больше трёх меток подряд — это уже список"
+    ]
+  },
+  "behaviour": [
+    "Не нажимается и не получает фокус",
+    "Не переносится на вторую строку"
+  ],
+  "accessibility": "Обычный текст; цвет не единственный носитель смысла — есть слово.",
+  "codegen": [
+    "Сопоставление «категория → цвет» держите в одном месте продукта"
+  ],
+  "examples": [
+    {
+      "title": "Category",
+      "props": {
+        "color": "accent"
+      },
+      "children": "Wholesale"
+    },
+    {
+      "title": "Neutral",
+      "props": {},
+      "children": "Gift"
+    },
+    {
+      "title": "Attention",
+      "props": {
+        "color": "amber"
+      },
+      "children": "Low margin"
+    }
+  ],
+  "ruleExamples": {
+    "1": {
+      "do": {
+        "caption": "Две-три метки",
+        "nodes": [
+          {
+            "c": "Tag",
+            "p": {
+              "color": "accent"
+            },
+            "t": "Wholesale"
+          },
+          {
+            "c": "Tag",
+            "p": {},
+            "t": "Gift"
+          }
+        ]
+      },
+      "dont": {
+        "caption": "Метки превратились в список",
+        "nodes": [
+          {
+            "c": "Tag",
+            "p": {},
+            "t": "Wholesale"
+          },
+          {
+            "c": "Tag",
+            "p": {},
+            "t": "Gift"
+          },
+          {
+            "c": "Tag",
+            "p": {},
+            "t": "EU"
+          },
+          {
+            "c": "Tag",
+            "p": {},
+            "t": "VIP"
+          }
+        ]
+      }
+    }
+  }
+}

@@ -1,0 +1,7 @@
+.ds-switch { display: inline-flex; align-items: center; gap: var(--space-8); cursor: pointer; font-size: var(--font-size-14); color: var(--color-text-strong); }
+.ds-switch__track { position: relative; width: 32px; height: 18px; flex: none; border-radius: var(--radius-pill); background: var(--color-stroke-medium); transition: background-color 150ms; }
+.ds-switch__track--on { background: var(--color-control-checked); }
+.ds-switch__thumb { position: absolute; top: 2px; left: 2px; width: 14px; height: 14px; border-radius: var(--radius-pill); background: var(--color-surface-raised); box-shadow: var(--shadow-raised); transition: transform 150ms; }
+.ds-switch__track--on .ds-switch__thumb { transform: translateX(14px); }
+.ds-switch input:focus-visible + .ds-switch__track { outline: 2px solid var(--color-stroke-focus); outline-offset: 2px; }
+.ds-switch--disabled { cursor: not-allowed; color: var(--color-text-disabled); }

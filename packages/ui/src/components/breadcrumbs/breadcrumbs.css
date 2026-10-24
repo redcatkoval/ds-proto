@@ -1,0 +1,5 @@
+.ds-breadcrumbs ol { display: flex; align-items: center; flex-wrap: wrap; gap: var(--space-4); margin: 0; padding: 0; list-style: none; font-size: var(--font-size-13); }
+.ds-breadcrumbs li { display: inline-flex; align-items: center; gap: var(--space-4); color: var(--color-text-soft); }
+.ds-breadcrumbs a { color: var(--color-text-soft); text-decoration: none; border-radius: var(--radius-small); }
+.ds-breadcrumbs a:hover { color: var(--color-text-strong); }
+.ds-breadcrumbs [aria-current="page"] { color: var(--color-text-strong); font-weight: var(--font-weight-medium); }

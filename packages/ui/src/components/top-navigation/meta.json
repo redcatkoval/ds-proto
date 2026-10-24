@@ -1,0 +1,49 @@
+{
+  "name": "TopNavigation",
+  "group": "Навигация",
+  "description": "Верхняя полоса продукта: название, разделы, пользователь. Для продуктов без боковой навигации.",
+  "design": "finished",
+  "usage": {
+    "do": [
+      "Небольшой продукт с тремя–шестью разделами"
+    ],
+    "dont": [
+      "Вместе с SideNavigation",
+      "Больше шести разделов"
+    ]
+  },
+  "behaviour": [
+    "Пункты — NavigationItem"
+  ],
+  "accessibility": "nav с подписью.",
+  "codegen": [
+    "Одна на приложение"
+  ],
+  "examples": [
+    {
+      "title": "Portal",
+      "props": {
+        "product": "Merrow",
+        "user": "Ana Ferreira",
+        "items": [
+          {
+            "label": "Overview",
+            "href": "#",
+            "icon": "home",
+            "active": true
+          },
+          {
+            "label": "Orders",
+            "href": "#",
+            "icon": "receipt"
+          },
+          {
+            "label": "Account",
+            "href": "#",
+            "icon": "user"
+          }
+        ]
+      }
+    }
+  ]
+}

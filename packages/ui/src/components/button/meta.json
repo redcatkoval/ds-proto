@@ -1,0 +1,193 @@
+{
+  "name": "Button",
+  "group": "Действия",
+  "description": "Кнопка запускает действие или ведёт на следующий шаг. Текст на ней — глагол, который называет результат: «Save product», а не «OK».",
+  "design": "finished",
+  "usage": {
+    "do": [
+      "Главное действие экрана или формы — variant primary, одно в ряду",
+      "Отмена и второстепенные действия — secondary",
+      "Необратимое действие — danger и подтверждение перед ним"
+    ],
+    "dont": [
+      "Ссылка внутри текста — это ссылка, а не кнопка",
+      "Кнопка из одной иконки — для этого есть IconButton",
+      "Неактивная кнопка без объяснения — лучше сказать, чего не хватает"
+    ]
+  },
+  "behaviour": [
+    "loading показывает Spinner и не даёт нажать второй раз",
+    "С href кнопка рисуется ссылкой, но выглядит так же",
+    "Слово на время загрузки берётся из формулировок бренда"
+  ],
+  "accessibility": "Нативный button или a: фокус, Enter и пробел работают сами. Во время загрузки — aria-busy.",
+  "codegen": [
+    "Подпись — из словаря бренда, глагол + объект: «Save product», «Add customer»",
+    "Кнопка отправки формы — type=\"submit\" и последняя в ряду"
+  ],
+  "examples": [
+    {
+      "title": "Primary",
+      "props": {
+        "variant": "primary"
+      },
+      "children": "Save product"
+    },
+    {
+      "title": "With icon",
+      "props": {
+        "variant": "secondary",
+        "icon": "plus"
+      },
+      "children": "Add customer"
+    },
+    {
+      "title": "Danger",
+      "props": {
+        "variant": "danger"
+      },
+      "children": "Delete order"
+    },
+    {
+      "title": "Loading",
+      "props": {
+        "variant": "primary",
+        "loading": true
+      },
+      "children": "Saving"
+    }
+  ],
+  "ruleExamples": {
+    "1": {
+      "do": {
+        "caption": "Одна главная",
+        "nodes": [
+          {
+            "c": "Button",
+            "p": {
+              "variant": "secondary"
+            },
+            "t": "Cancel"
+          },
+          {
+            "c": "Button",
+            "p": {
+              "variant": "primary"
+            },
+            "t": "Save product"
+          }
+        ]
+      },
+      "dont": {
+        "caption": "Две главные — какая важнее?",
+        "nodes": [
+          {
+            "c": "Button",
+            "p": {
+              "variant": "primary"
+            },
+            "t": "Save draft"
+          },
+          {
+            "c": "Button",
+            "p": {
+              "variant": "primary"
+            },
+            "t": "Publish"
+          }
+        ]
+      }
+    },
+    "2": {
+      "do": {
+        "caption": "Отмена, потом отправка",
+        "nodes": [
+          {
+            "c": "Button",
+            "p": {},
+            "t": "Cancel"
+          },
+          {
+            "c": "Button",
+            "p": {
+              "variant": "primary",
+              "type": "submit"
+            },
+            "t": "Save"
+          }
+        ]
+      },
+      "dont": {
+        "caption": "Отправка первой",
+        "nodes": [
+          {
+            "c": "Button",
+            "p": {
+              "variant": "primary",
+              "type": "submit"
+            },
+            "t": "Save"
+          },
+          {
+            "c": "Button",
+            "p": {},
+            "t": "Cancel"
+          }
+        ]
+      }
+    },
+    "3": {
+      "do": {
+        "caption": "Красная и называет результат",
+        "nodes": [
+          {
+            "c": "Button",
+            "p": {
+              "variant": "danger",
+              "icon": "trash"
+            },
+            "t": "Delete order"
+          }
+        ]
+      },
+      "dont": {
+        "caption": "Необратимое выглядит как обычное",
+        "nodes": [
+          {
+            "c": "Button",
+            "p": {
+              "variant": "primary"
+            },
+            "t": "Delete order"
+          }
+        ]
+      }
+    },
+    "4": {
+      "do": {
+        "caption": "Глагол + объект",
+        "nodes": [
+          {
+            "c": "Button",
+            "p": {
+              "variant": "primary"
+            },
+            "t": "Refund €42.00"
+          }
+        ]
+      },
+      "dont": {
+        "caption": "Непонятно, что произойдёт",
+        "nodes": [
+          {
+            "c": "Button",
+            "p": {
+              "variant": "primary"
+            },
+            "t": "OK"
+          }
+        ]
+      }
+    }
+  }
+}

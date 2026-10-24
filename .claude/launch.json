@@ -1,0 +1,7 @@
+{
+  "version": "0.0.1",
+  "configurations": [
+    { "name": "Витрина", "runtimeExecutable": "npm", "runtimeArgs": ["run", "dev:docs"], "port": 4321 },
+    { "name": "Merrow Admin", "runtimeExecutable": "npm", "runtimeArgs": ["run", "dev:crm"], "port": 5173 }
+  ]
+}

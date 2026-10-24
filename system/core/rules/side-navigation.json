@@ -1,0 +1,28 @@
+{
+  "component": "SideNavigation",
+  "contract": "system/core/contracts/side-navigation.md",
+  "rules": [
+    {
+      "id": "side-navigation.max-items",
+      "anchor": {
+        "section": "1",
+        "quote": "В items не больше восьми пунктов."
+      },
+      "kind": "max-items",
+      "prop": "items",
+      "max": 8,
+      "message": "В боковой навигации больше восьми разделов"
+    },
+    {
+      "id": "side-navigation.max-footer",
+      "anchor": {
+        "section": "2",
+        "quote": "В footerItems не больше трёх пунктов."
+      },
+      "kind": "max-items",
+      "prop": "footerItems",
+      "max": 3,
+      "message": "Внизу навигации больше трёх пунктов"
+    }
+  ]
+}

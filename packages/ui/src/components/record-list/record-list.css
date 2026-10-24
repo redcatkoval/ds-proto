@@ -1,0 +1,2 @@
+.ds-record-list { border-radius: var(--radius-surface); background: var(--color-surface-raised); box-shadow: var(--shadow-raised); }
+.ds-record-list__title { margin: 0; padding: var(--space-12) var(--space-16); font-size: var(--font-size-14); font-weight: var(--font-weight-semibold); border-bottom: 1px solid #e0e1e6; }

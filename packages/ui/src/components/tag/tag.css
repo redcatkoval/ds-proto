@@ -1,0 +1,12 @@
+.ds-tag {
+  display: inline-flex; align-items: center; height: 22px; padding: 0 var(--space-8);
+  border-radius: var(--radius-small);
+  font-size: var(--font-size-12); font-weight: var(--font-weight-medium);
+  white-space: nowrap;
+}
+.ds-tag--grey   { background: var(--color-tag-grey-bg);   color: var(--color-tag-grey-text); }
+.ds-tag--blue   { background: var(--color-tag-blue-bg);   color: var(--color-tag-blue-text); }
+.ds-tag--green  { background: var(--color-tag-green-bg);  color: var(--color-tag-green-text); }
+.ds-tag--amber  { background: var(--color-tag-amber-bg);  color: var(--color-tag-amber-text); }
+.ds-tag--red    { background: var(--color-tag-red-bg);    color: var(--color-tag-red-text); }
+.ds-tag--accent { background: var(--color-tag-accent-bg); color: var(--color-tag-accent-text); }

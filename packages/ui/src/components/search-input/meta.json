@@ -1,0 +1,32 @@
+{
+  "name": "SearchInput",
+  "group": "Поля",
+  "description": "Поле поиска над списком: ищет по мере ввода, очищается крестиком.",
+  "design": "finished",
+  "usage": {
+    "do": [
+      "Над таблицей или списком"
+    ],
+    "dont": [
+      "Два поиска на экране",
+      "Поиск по всему продукту — это другой компонент"
+    ]
+  },
+  "behaviour": [
+    "Крестик появляется, когда что-то введено; его подпись — из формулировок бренда"
+  ],
+  "accessibility": "Подпись для диктора вместо видимой.",
+  "codegen": [
+    "label — где ищем: «Search orders»"
+  ],
+  "examples": [
+    {
+      "title": "Orders",
+      "props": {
+        "label": "Search orders",
+        "placeholder": "Order, customer or email",
+        "value": ""
+      }
+    }
+  ]
+}

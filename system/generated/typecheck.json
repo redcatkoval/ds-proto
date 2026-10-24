@@ -1,0 +1,20 @@
+{
+  "date": "2026-10-24",
+  "projects": [
+    {
+      "project": "packages/ui",
+      "ok": true,
+      "errors": []
+    },
+    {
+      "project": "apps/crm",
+      "ok": true,
+      "errors": []
+    },
+    {
+      "project": "apps/docs",
+      "ok": true,
+      "errors": []
+    }
+  ]
+}

@@ -1,0 +1,4 @@
+.ds-top-navigation { display: flex; align-items: center; gap: var(--space-24); height: 56px; padding: 0 var(--space-24); background: var(--color-surface-raised); border-bottom: 1px solid var(--color-stroke-soft); }
+.ds-top-navigation__product { font-family: var(--font-display); font-size: var(--font-size-16); font-weight: var(--font-weight-semibold); color: var(--color-text-strong); white-space: nowrap; }
+.ds-top-navigation__items { display: flex; align-items: center; gap: var(--space-4); min-width: 0; overflow-x: auto; }
+.ds-top-navigation__end { display: flex; align-items: center; gap: var(--space-12); margin-left: auto; }

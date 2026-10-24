@@ -1,0 +1,28 @@
+{
+  "component": "Toggle",
+  "contract": "system/core/contracts/toggle.md",
+  "rules": [
+    {
+      "id": "toggle.min-options",
+      "anchor": {
+        "section": "1",
+        "quote": "В options от двух до четырёх вариантов."
+      },
+      "kind": "min-items",
+      "prop": "options",
+      "min": 2,
+      "message": "У переключателя меньше двух вариантов"
+    },
+    {
+      "id": "toggle.max-options",
+      "anchor": {
+        "section": "1",
+        "quote": "В options от двух до четырёх вариантов."
+      },
+      "kind": "max-items",
+      "prop": "options",
+      "max": 4,
+      "message": "У переключателя больше четырёх вариантов"
+    }
+  ]
+}

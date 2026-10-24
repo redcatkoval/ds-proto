@@ -1,0 +1,41 @@
+{
+  "name": "Checkbox",
+  "group": "Выбор",
+  "description": "Флажок: включить или выключить что-то, что применится после сохранения. Подпись нажимается вместе с квадратом.",
+  "design": "finished",
+  "usage": {
+    "do": [
+      "Согласие, настройка в форме с кнопкой «Save»",
+      "Выбор строк таблицы"
+    ],
+    "dont": [
+      "Мгновенное действие — это Switch",
+      "Выбор одного из нескольких — Toggle или Select"
+    ]
+  },
+  "behaviour": [
+    "indeterminate — выбрана часть",
+    "Подпись можно спрятать, но не убрать"
+  ],
+  "accessibility": "Нативный checkbox, подпись связана.",
+  "codegen": [
+    "hideLabel — только в таблицах, где подпись видна в заголовке"
+  ],
+  "examples": [
+    {
+      "title": "Consent",
+      "props": {
+        "label": "Email me about new orders",
+        "checked": true
+      }
+    },
+    {
+      "title": "Partial",
+      "props": {
+        "label": "Select all",
+        "checked": false,
+        "indeterminate": true
+      }
+    }
+  ]
+}

@@ -1,0 +1,25 @@
+{
+  "name": "ds-proto",
+  "private": true,
+  "type": "module",
+  "workspaces": [
+    "packages/*",
+    "apps/*"
+  ],
+  "scripts": {
+    "tokens": "node tools/tokens/build.mjs",
+    "snapshot": "node tools/snapshot/build.mjs",
+    "check": "node tools/check.mjs",
+    "typecheck": "tsc -p packages/ui && tsc -p apps/docs && tsc -p apps/crm",
+    "dev": "node tools/check.mjs; npm run dev:docs",
+    "dev:docs": "npm run dev --workspace=@ds/docs",
+    "dev:crm": "npm run dev --workspace=@ds/admin",
+    "export:agent": "node tools/export/agent.mjs",
+    "lint": "node tools/lint/lint.mjs"
+  },
+  "devDependencies": {
+    "typescript": "5.9.3",
+    "@types/react": "19.3.0",
+    "@types/react-dom": "19.3.0"
+  }
+}

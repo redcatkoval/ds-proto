@@ -1,0 +1,32 @@
+.ds-button {
+  display: inline-flex; align-items: center; justify-content: center;
+  gap: var(--space-6);
+  font-family: var(--font-text);
+  font-weight: var(--font-weight-medium);
+  border-radius: var(--radius-control);
+  border: 1px solid transparent;
+  text-decoration: none;
+  white-space: nowrap;
+  cursor: pointer;
+  transition: background-color 120ms, border-color 120ms, color 120ms;
+}
+.ds-button--sm { height: 32px; padding: 0 var(--space-12); font-size: var(--font-size-13); }
+.ds-button--md { height: 40px; padding: 0 var(--space-16); font-size: var(--font-size-14); }
+
+.ds-button--primary { background: var(--color-control-primary-rest); color: var(--color-text-on-accent); }
+.ds-button--primary:hover { background: var(--color-control-primary-hover); }
+.ds-button--primary:active { background: var(--color-control-primary-press); }
+
+.ds-button--secondary { background: var(--color-control-secondary-rest); color: var(--color-text-strong); border-color: var(--color-stroke-medium); box-shadow: var(--shadow-raised); }
+.ds-button--secondary:hover { background: var(--color-control-secondary-hover); }
+.ds-button--secondary:active { background: var(--color-control-secondary-press); }
+
+.ds-button--ghost { background: transparent; color: var(--color-text-medium); }
+.ds-button--ghost:hover { background: var(--color-control-ghost-hover); color: var(--color-text-strong); }
+.ds-button--ghost:active { background: var(--color-control-ghost-press); }
+
+.ds-button--danger { background: var(--color-control-danger-rest); color: var(--color-text-on-accent); }
+.ds-button--danger:hover { background: var(--color-control-danger-hover); }
+
+.ds-button:disabled { cursor: not-allowed; background: var(--color-background-muted); color: var(--color-text-disabled); border-color: transparent; box-shadow: none; }
+.ds-button .ds-spinner { border-top-color: currentColor; }

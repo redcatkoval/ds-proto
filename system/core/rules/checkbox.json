@@ -1,0 +1,16 @@
+{
+  "component": "Checkbox",
+  "contract": "system/core/contracts/checkbox.md",
+  "rules": [
+    {
+      "id": "checkbox.label",
+      "anchor": {
+        "section": "1",
+        "quote": "label не пустой, даже когда он спрятан через hideLabel."
+      },
+      "kind": "attr-nonempty",
+      "prop": "label",
+      "message": "У флажка пустая подпись"
+    }
+  ]
+}

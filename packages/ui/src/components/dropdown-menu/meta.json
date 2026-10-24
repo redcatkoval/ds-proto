@@ -1,0 +1,48 @@
+{
+  "name": "DropdownMenu",
+  "group": "Поверх",
+  "description": "Меню действий над записью под троеточием. Нужно, когда действий несколько и они не помещаются кнопками.",
+  "design": "finished",
+  "usage": {
+    "do": [
+      "Действия со строкой таблицы",
+      "Редкие действия в шапке панели"
+    ],
+    "dont": [
+      "Одно действие — это Button",
+      "Навигация по разделам"
+    ]
+  },
+  "behaviour": [
+    "Esc и клик снаружи закрывают",
+    "Стрелки ходят по пунктам",
+    "Необратимое — красным"
+  ],
+  "accessibility": "menu, menuitem, фокус на первом пункте.",
+  "codegen": [
+    "Необратимые пункты — destructive: true и последними"
+  ],
+  "examples": [
+    {
+      "title": "Order actions",
+      "props": {
+        "label": "Order actions",
+        "items": [
+          {
+            "label": "Edit",
+            "icon": "edit"
+          },
+          {
+            "label": "Copy ID",
+            "icon": "copy"
+          },
+          {
+            "label": "Cancel order",
+            "icon": "x",
+            "destructive": true
+          }
+        ]
+      }
+    }
+  ]
+}

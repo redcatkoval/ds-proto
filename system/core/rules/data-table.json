@@ -1,0 +1,17 @@
+{
+  "component": "DataTable",
+  "contract": "system/core/contracts/data-table.md",
+  "rules": [
+    {
+      "id": "data-table.max-columns",
+      "anchor": {
+        "section": "1",
+        "quote": "В columns не больше семи столбцов. Остальное — в карточку записи."
+      },
+      "kind": "max-items",
+      "prop": "columns",
+      "max": 7,
+      "message": "В таблице больше семи колонок"
+    }
+  ]
+}

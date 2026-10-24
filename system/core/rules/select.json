@@ -1,0 +1,17 @@
+{
+  "component": "Select",
+  "contract": "system/core/contracts/select.md",
+  "rules": [
+    {
+      "id": "select.max-options",
+      "anchor": {
+        "section": "1",
+        "quote": "В options не больше пятнадцати вариантов."
+      },
+      "kind": "max-items",
+      "prop": "options",
+      "max": 15,
+      "message": "В списке больше пятнадцати вариантов"
+    }
+  ]
+}

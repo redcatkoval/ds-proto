@@ -1,0 +1,16 @@
+{
+  "component": "IconButton",
+  "contract": "system/core/contracts/icon-button.md",
+  "rules": [
+    {
+      "id": "icon-button.label",
+      "anchor": {
+        "section": "1",
+        "quote": "label не пустой: он звучит для диктора и всплывает при наведении."
+      },
+      "kind": "attr-nonempty",
+      "prop": "label",
+      "message": "У кнопки-иконки пустая подпись"
+    }
+  ]
+}

@@ -1,0 +1,15 @@
+.ds-icon-button {
+  display: inline-flex; align-items: center; justify-content: center; flex: none;
+  border-radius: var(--radius-control);
+  border: 1px solid transparent;
+  color: var(--color-text-medium);
+  background: transparent;
+  cursor: pointer;
+  transition: background-color 120ms, color 120ms;
+}
+.ds-icon-button--sm { width: 32px; height: 32px; }
+.ds-icon-button--md { width: 40px; height: 40px; }
+.ds-icon-button--ghost:hover { background: var(--color-control-ghost-hover); color: var(--color-text-strong); }
+.ds-icon-button--secondary { background: var(--color-control-secondary-rest); border-color: var(--color-stroke-medium); box-shadow: var(--shadow-raised); }
+.ds-icon-button--secondary:hover { background: var(--color-control-secondary-hover); color: var(--color-text-strong); }
+.ds-icon-button:disabled { color: var(--color-text-disabled); cursor: not-allowed; background: transparent; }

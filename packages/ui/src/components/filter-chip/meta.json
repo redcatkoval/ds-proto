@@ -1,0 +1,40 @@
+{
+  "name": "FilterChip",
+  "group": "Выбор",
+  "description": "Быстрый фильтр над таблицей: нажатие сразу меняет список. Счётчик показывает, сколько записей подходит.",
+  "design": "finished",
+  "usage": {
+    "do": [
+      "Три–пять самых частых фильтров"
+    ],
+    "dont": [
+      "Больше пяти — редкие фильтры в отдельную панель",
+      "Статус записи — это StatusBadge"
+    ]
+  },
+  "behaviour": [
+    "Включённый чип отмечен галочкой"
+  ],
+  "accessibility": "aria-pressed.",
+  "codegen": [
+    "count — сколько записей подойдёт"
+  ],
+  "examples": [
+    {
+      "title": "Selected",
+      "props": {
+        "selected": true,
+        "count": 12
+      },
+      "children": "Unfulfilled"
+    },
+    {
+      "title": "Off",
+      "props": {
+        "selected": false,
+        "count": 3
+      },
+      "children": "Refunded"
+    }
+  ]
+}

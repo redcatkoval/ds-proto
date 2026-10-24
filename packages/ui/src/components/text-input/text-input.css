@@ -1,0 +1,18 @@
+.ds-field { display: flex; flex-direction: column; gap: var(--space-6); min-width: 0; }
+.ds-text-input { position: relative; display: flex; align-items: center; }
+.ds-text-input input, .ds-text-area textarea {
+  width: 100%; font: inherit; font-size: var(--font-size-14); color: var(--color-text-strong);
+  background: var(--color-surface-raised);
+  border: 1px solid var(--color-stroke-medium); border-radius: var(--radius-control);
+  transition: border-color 120ms, box-shadow 120ms;
+}
+.ds-text-input input { height: 36px; padding: 0 var(--space-12); }
+.ds-text-input--with-icon input { padding-left: 36px; }
+.ds-text-input__icon { position: absolute; left: var(--space-12); color: var(--color-text-soft); display: flex; pointer-events: none; }
+.ds-text-input input::placeholder, .ds-text-area textarea::placeholder { color: var(--color-text-soft); }
+.ds-text-input input:hover, .ds-text-area textarea:hover { border-color: var(--color-stroke-strong); }
+.ds-text-input input:focus-visible, .ds-text-area textarea:focus-visible { outline: none; border-color: var(--color-stroke-focus); box-shadow: 0 0 0 3px var(--color-accent-soft); }
+.ds-text-input--invalid input, .ds-text-area--invalid textarea { border-color: var(--color-stroke-danger); }
+.ds-text-input input:disabled, .ds-text-area textarea:disabled { background: var(--color-background-muted); color: var(--color-text-disabled); cursor: not-allowed; }
+/* Многострочное поле: скругление панели, а не кнопки — иначе в бренде с «таблетками» поле становится овалом. */
+.ds-text-area textarea { border-radius: var(--radius-surface); }

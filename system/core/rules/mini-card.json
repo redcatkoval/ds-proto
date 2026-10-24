@@ -1,0 +1,16 @@
+{
+  "component": "MiniCard",
+  "contract": "system/core/contracts/mini-card.md",
+  "rules": [
+    {
+      "id": "mini-card.max-four",
+      "anchor": {
+        "section": "1",
+        "quote": "Среди соседей не больше четырёх карточек."
+      },
+      "kind": "max-per-parent",
+      "max": 4,
+      "message": "В ряду больше четырёх карточек"
+    }
+  ]
+}

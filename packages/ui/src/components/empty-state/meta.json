@@ -1,0 +1,86 @@
+{
+  "name": "EmptyState",
+  "group": "Обратная связь",
+  "description": "Заполняет пустую область: говорит, что случилось и как выйти. Одна кнопка или ни одной.",
+  "design": "finished",
+  "usage": {
+    "do": [
+      "Список пуст: «No orders yet»",
+      "Поиск ничего не нашёл — кнопка сбросить"
+    ],
+    "dont": [
+      "Ошибка загрузки — это не пустота",
+      "Две кнопки — выход должен быть один"
+    ]
+  },
+  "behaviour": [
+    "Кнопка выхода рисуется Button secondary",
+    "Иллюстрация берётся у бренда; нет картинки у бренда — показывается иконка"
+  ],
+  "accessibility": "Заголовок и описание читаются по порядку; иконка декоративная.",
+  "codegen": [
+    "title — ситуация, description — выход, кнопка — сам выход: «Clear filters»",
+    "illustration — место из набора системы: no-results для пустого поиска, empty-orders для пустого списка заказов. Свою картинку не подставляйте"
+  ],
+  "examples": [
+    {
+      "title": "No orders",
+      "props": {
+        "title": "No orders yet",
+        "description": "Orders appear here as soon as a customer checks out.",
+        "icon": "receipt",
+        "illustration": "empty-orders"
+      }
+    },
+    {
+      "title": "Nothing found",
+      "props": {
+        "title": "No products match",
+        "description": "Check the spelling or clear the filters.",
+        "icon": "search",
+        "illustration": "no-results",
+        "action": {
+          "label": "Clear filters"
+        }
+      }
+    },
+    {
+      "title": "Icon only",
+      "props": {
+        "title": "No notes yet",
+        "description": "Notes you add to an order appear here.",
+        "icon": "inbox"
+      }
+    }
+  ],
+  "ruleExamples": {
+    "2": {
+      "do": {
+        "caption": "Ситуация и выход",
+        "nodes": [
+          {
+            "c": "EmptyState",
+            "p": {
+              "title": "No orders yet",
+              "description": "Orders appear here as soon as a customer checks out.",
+              "icon": "receipt"
+            }
+          }
+        ]
+      },
+      "dont": {
+        "caption": "Повторяет заголовок",
+        "nodes": [
+          {
+            "c": "EmptyState",
+            "p": {
+              "title": "No orders",
+              "description": "There are no orders.",
+              "icon": "receipt"
+            }
+          }
+        ]
+      }
+    }
+  }
+}

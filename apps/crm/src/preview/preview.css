@@ -1,0 +1,51 @@
+/* Инструмент предпросмотра. Нейтральные цвета, не зависят от бренда и темы продукта. */
+.pv { font-family: "Inter Variable", system-ui, sans-serif; font-size: 13px; }
+.pv-bar {
+  position: fixed; left: 50%; bottom: 20px; transform: translateX(-50%); z-index: 1000;
+  display: flex; align-items: center; gap: 10px; padding: 6px 6px 6px 16px;
+  background: #1d1f23; color: #e8e9ec; border: 1px solid #34373e; border-radius: 999px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25); white-space: nowrap;
+}
+.pv-bar__name { color: #9a9ea8; margin-right: 4px; }
+.pv-seg { display: flex; background: #2a2d33; border-radius: 999px; padding: 2px; }
+.pv-seg__btn, .pv-toggle {
+  font: inherit; border: 0; cursor: pointer; color: #c9ccd3; background: transparent;
+  padding: 6px 12px; border-radius: 999px;
+}
+.pv-seg__btn[aria-checked="true"] { background: #464a53; color: #fff; }
+.pv-toggle { background: #3b5bdb; color: #fff; font-weight: 500; }
+.pv-toggle[aria-pressed="true"] { background: #f0f1f3; color: #1d1f23; }
+.pv-seg__btn:focus-visible, .pv-toggle:focus-visible { outline: 2px solid #8fa7ff; outline-offset: 2px; }
+
+:root[data-pv-on] #root [data-component] { outline: 1px dashed rgba(59, 91, 219, 0.35); outline-offset: -1px; cursor: help; }
+:root[data-pv-on] #root [data-component] * { cursor: help; }
+:root[data-pv-on] [data-pv-focus] { outline: 2px solid #f08c00 !important; outline-offset: 1px !important; }
+
+.pv-box { position: fixed; z-index: 999; pointer-events: none; border: 2px solid #3b5bdb; border-radius: 4px; background: rgba(59, 91, 219, 0.08); }
+.pv-box__label {
+  position: absolute; left: -2px; bottom: 100%; margin-bottom: 4px;
+  background: #3b5bdb; color: #fff; padding: 3px 8px; border-radius: 4px; white-space: nowrap; font-size: 12px;
+}
+.pv-box__label--below { bottom: auto; top: 100%; margin: 4px 0 0; }
+.pv-box__label span { opacity: 0.8; }
+
+.pv-panel {
+  position: fixed; right: 20px; top: 20px; z-index: 1000; width: 240px; max-height: calc(100vh - 180px);
+  display: flex; flex-direction: column;
+  background: #1d1f23; color: #e8e9ec; border: 1px solid #34373e; border-radius: 12px; box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25);
+}
+.pv-panel__head { display: flex; justify-content: space-between; gap: 8px; width: 100%; padding: 12px 14px; border: 0; background: none; color: inherit; font: inherit; font-weight: 500; text-align: left; cursor: pointer; }
+.pv-panel__target { padding: 10px 14px; color: #ffd8a8; border-top: 1px solid #34373e; }
+.pv-panel__target b { color: #fff; }
+.pv-panel__list li.is-target { box-shadow: inset 2px 0 0 #f08c00; }
+.pv-panel__list { list-style: none; margin: 0; padding: 6px; overflow: auto; border-top: 1px solid #34373e; }
+.pv-panel__list li { display: flex; justify-content: space-between; padding: 5px 8px; border-radius: 6px; }
+.pv-panel__list li:hover { background: #2a2d33; }
+.pv-panel__list a { color: #c3d0ff; text-decoration: none; }
+.pv-panel__list span { color: #9a9ea8; font-variant-numeric: tabular-nums; }
+.pv-panel__foot { padding: 10px 14px; border-top: 1px solid #34373e; color: #9a9ea8; font-size: 12px; line-height: 1.4; }
+
+@media (max-width: 760px) { .pv-bar__name { display: none; } .pv-panel { display: none; } }
+
+/* место под плавающую панель внизу, чтобы она не закрывала пагинацию и последние строки */
+body:has(.pv) .app-main { padding-bottom: 96px; }

@@ -1,0 +1,7 @@
+.ds-select { position: relative; display: flex; align-items: center; }
+.ds-select select { appearance: none; width: 100%; height: 36px; padding: 0 36px 0 var(--space-12); font: inherit; font-size: var(--font-size-14); color: var(--color-text-strong); background: var(--color-surface-raised); border: 1px solid var(--color-stroke-medium); border-radius: var(--radius-control); cursor: pointer; }
+.ds-select select:hover { border-color: var(--color-stroke-strong); }
+.ds-select select:focus-visible { outline: none; border-color: var(--color-stroke-focus); box-shadow: 0 0 0 3px var(--color-accent-soft); }
+.ds-select select:disabled { background: var(--color-background-muted); color: var(--color-text-disabled); cursor: not-allowed; }
+.ds-select--invalid select { border-color: var(--color-stroke-danger); }
+.ds-select__chevron { position: absolute; right: var(--space-12); color: var(--color-text-soft); display: flex; pointer-events: none; }

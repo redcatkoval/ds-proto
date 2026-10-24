@@ -1,0 +1,11 @@
+.ds-checkbox { display: inline-flex; align-items: center; gap: var(--space-8); cursor: pointer; font-size: var(--font-size-14); color: var(--color-text-strong); }
+.ds-checkbox__box {
+  display: inline-flex; align-items: center; justify-content: center; flex: none;
+  width: 16px; height: 16px; border-radius: var(--radius-small);
+  border: 1px solid var(--color-stroke-strong); background: var(--color-surface-raised); color: var(--color-text-on-accent);
+  transition: background-color 120ms, border-color 120ms;
+}
+.ds-checkbox__box--on { background: var(--color-control-checked); border-color: var(--color-control-checked); }
+.ds-checkbox input:focus-visible + .ds-checkbox__box { outline: 2px solid var(--color-stroke-focus); outline-offset: 2px; }
+.ds-checkbox--disabled { cursor: not-allowed; color: var(--color-text-disabled); }
+.ds-checkbox--disabled .ds-checkbox__box { background: var(--color-background-muted); border-color: var(--color-stroke-soft); }

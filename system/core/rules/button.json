@@ -1,0 +1,31 @@
+{
+  "component": "Button",
+  "contract": "system/core/contracts/button.md",
+  "rules": [
+    {
+      "id": "button.one-primary",
+      "anchor": {
+        "section": "1",
+        "quote": "Среди кнопок одного ряда только одна основная (variant=\"primary\"). Остальные — secondary или ghost."
+      },
+      "kind": "max-per-parent",
+      "where": {
+        "variant": "primary"
+      },
+      "max": 1,
+      "message": "В ряду больше одной основной кнопки"
+    },
+    {
+      "id": "button.submit-last",
+      "anchor": {
+        "section": "2",
+        "quote": "Кнопка с type=\"submit\" стоит последней в своём ряду: сначала «Cancel», потом «Save»."
+      },
+      "kind": "order-last",
+      "where": {
+        "type": "submit"
+      },
+      "message": "Кнопка отправки стоит не последней в ряду"
+    }
+  ]
+}

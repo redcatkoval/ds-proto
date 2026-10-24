@@ -1,0 +1,45 @@
+{
+  "name": "TextInput",
+  "group": "Поля",
+  "description": "Однострочное поле с подписью и местом для ошибки.",
+  "design": "finished",
+  "usage": {
+    "do": [
+      "Имя, почта, телефон, артикул",
+      "type по содержанию: email, tel, number"
+    ],
+    "dont": [
+      "Длинный текст — это TextArea",
+      "Отдельный Label рядом — подпись уже внутри"
+    ]
+  },
+  "behaviour": [
+    "Подпись связана с полем",
+    "Ошибка подсвечивает поле и читается диктором"
+  ],
+  "accessibility": "label for, aria-invalid, aria-describedby.",
+  "codegen": [
+    "Ошибку показывайте после ухода с поля, а не на каждую букву"
+  ],
+  "examples": [
+    {
+      "title": "Email",
+      "props": {
+        "id": "ex-email",
+        "label": "Email",
+        "type": "email",
+        "value": "ana@ferreira.pt"
+      }
+    },
+    {
+      "title": "Error",
+      "props": {
+        "id": "ex-sku",
+        "label": "SKU",
+        "value": "",
+        "error": "Enter a SKU to track stock",
+        "required": true
+      }
+    }
+  ]
+}

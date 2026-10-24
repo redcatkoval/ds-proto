@@ -1,0 +1,39 @@
+{
+  "name": "Label",
+  "group": "Поля",
+  "description": "Подпись поля. Внутри TextInput, TextArea и Select уже есть — отдельно нужна для своих полей.",
+  "design": "finished",
+  "usage": {
+    "do": [
+      "Подпись к полю, у которого нет своей"
+    ],
+    "dont": [
+      "Рядом с TextInput, TextArea или Select — подпись у них внутри"
+    ]
+  },
+  "behaviour": [
+    "«Required» — словом из формулировок бренда, не звёздочкой"
+  ],
+  "accessibility": "Нативный label с htmlFor.",
+  "codegen": [
+    "Подпись — существительное: «Email», а не «Enter email»"
+  ],
+  "examples": [
+    {
+      "title": "Required",
+      "props": {
+        "htmlFor": "x",
+        "required": true
+      },
+      "children": "Email"
+    },
+    {
+      "title": "Hint",
+      "props": {
+        "htmlFor": "y",
+        "hint": "visible to customers"
+      },
+      "children": "Product title"
+    }
+  ]
+}

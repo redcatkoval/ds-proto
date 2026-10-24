@@ -1,0 +1,16 @@
+{
+  "component": "FilterChip",
+  "contract": "system/core/contracts/filter-chip.md",
+  "rules": [
+    {
+      "id": "filter-chip.max-five",
+      "anchor": {
+        "section": "1",
+        "quote": "Среди соседей не больше пяти чипов."
+      },
+      "kind": "max-per-parent",
+      "max": 5,
+      "message": "Рядом больше пяти чипов"
+    }
+  ]
+}

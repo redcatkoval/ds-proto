@@ -1,0 +1,5 @@
+.ds-mini-card { display: flex; flex-direction: column; gap: var(--space-8); padding: var(--space-16); border-radius: var(--radius-surface); background: var(--color-surface-raised); box-shadow: var(--shadow-raised); min-width: 0; }
+.ds-mini-card__title { margin: 0; font-size: var(--font-size-13); font-weight: var(--font-weight-medium); color: var(--color-text-medium); }
+.ds-mini-card__value { margin: 0; font-family: var(--font-display); font-size: var(--font-size-32); font-weight: var(--font-weight-semibold); line-height: 1.1; letter-spacing: -0.02em; color: var(--color-text-strong); font-variant-numeric: tabular-nums; }
+.ds-mini-card__footer { display: flex; flex-wrap: wrap; align-items: center; gap: var(--space-6) var(--space-8); min-height: 22px; }
+.ds-mini-card__caption { font-size: var(--font-size-13); color: var(--color-text-soft); }

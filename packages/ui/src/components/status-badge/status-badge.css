@@ -1,0 +1,6 @@
+.ds-status-badge { display: inline-flex; align-items: center; gap: var(--space-6); height: 22px; padding: 0 var(--space-8) 0 var(--space-6); border-radius: var(--radius-small); border: 1px solid var(--color-stroke-soft); background: var(--color-surface-raised); color: var(--color-text-medium); font-size: var(--font-size-12); font-weight: var(--font-weight-medium); white-space: nowrap; }
+.ds-status-badge__dot { width: 6px; height: 6px; border-radius: var(--radius-pill); background: var(--color-stroke-strong); }
+.ds-status-badge--info .ds-status-badge__dot { background: var(--color-feedback-info-solid); }
+.ds-status-badge--success .ds-status-badge__dot { background: var(--color-feedback-success-solid); }
+.ds-status-badge--warning .ds-status-badge__dot { background: var(--color-feedback-warning-solid); }
+.ds-status-badge--danger .ds-status-badge__dot { background: var(--color-feedback-danger-solid); }

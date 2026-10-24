@@ -1,0 +1,27 @@
+{
+  "component": "DropdownMenu",
+  "contract": "system/core/contracts/dropdown-menu.md",
+  "rules": [
+    {
+      "id": "dropdown-menu.min-two",
+      "anchor": {
+        "section": "1",
+        "quote": "В items не меньше двух действий. Одно действие — это Button, а не меню."
+      },
+      "kind": "min-items",
+      "prop": "items",
+      "min": 2,
+      "message": "В меню одно действие — это кнопка, а не меню"
+    },
+    {
+      "id": "dropdown-menu.destructive-last",
+      "anchor": {
+        "section": "2",
+        "quote": "Пункты с destructive: true идут в конце списка."
+      },
+      "kind": "destructive-last",
+      "prop": "items",
+      "message": "Необратимое действие стоит не в конце меню"
+    }
+  ]
+}

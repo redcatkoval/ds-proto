@@ -1,0 +1,81 @@
+{
+  "name": "StatusBadge",
+  "group": "Данные",
+  "description": "Состояние процесса: оплачен ли заказ, отправлен ли, есть ли на складе. Точка с тоном и слово.",
+  "design": "finished",
+  "usage": {
+    "do": [
+      "Статус оплаты, доставки, наличия",
+      "В ячейке таблицы и в шапке карточки"
+    ],
+    "dont": [
+      "Категория записи — это Tag",
+      "Статус без слова, одной точкой"
+    ]
+  },
+  "behaviour": [
+    "Тон задаёт цвет точки; текст остаётся нейтральным и читаемым"
+  ],
+  "accessibility": "Состояние передаётся словом, точка декоративная.",
+  "codegen": [
+    "Тон по смыслу: success — завершено, warning — ждёт действия, danger — проблема, info — идёт процесс"
+  ],
+  "examples": [
+    {
+      "title": "Paid",
+      "props": {
+        "tone": "success"
+      },
+      "children": "Paid"
+    },
+    {
+      "title": "Awaiting",
+      "props": {
+        "tone": "warning"
+      },
+      "children": "Awaiting shipment"
+    },
+    {
+      "title": "Failed",
+      "props": {
+        "tone": "danger"
+      },
+      "children": "Payment failed"
+    }
+  ],
+  "ruleExamples": {
+    "1": {
+      "do": {
+        "caption": "Тон совпадает со смыслом",
+        "nodes": [
+          {
+            "c": "StatusBadge",
+            "p": {
+              "tone": "success"
+            },
+            "t": "Paid"
+          },
+          {
+            "c": "StatusBadge",
+            "p": {
+              "tone": "warning"
+            },
+            "t": "Awaiting shipment"
+          }
+        ]
+      },
+      "dont": {
+        "caption": "Ждёт действия, а выглядит как готово",
+        "nodes": [
+          {
+            "c": "StatusBadge",
+            "p": {
+              "tone": "success"
+            },
+            "t": "Awaiting shipment"
+          }
+        ]
+      }
+    }
+  }
+}

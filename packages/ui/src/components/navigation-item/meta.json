@@ -1,0 +1,34 @@
+{
+  "name": "NavigationItem",
+  "group": "Навигация",
+  "description": "Пункт навигации: переход в раздел. Сам по себе не используется — только внутри SideNavigation или TopNavigation.",
+  "design": "finished",
+  "usage": {
+    "do": [
+      "Пункт SideNavigation"
+    ],
+    "dont": [
+      "Отдельно на странице — это ссылка или кнопка"
+    ]
+  },
+  "behaviour": [
+    "active ставит aria-current=page",
+    "Счётчик — только то, что требует действия"
+  ],
+  "accessibility": "Ссылка с aria-current.",
+  "codegen": [
+    "count — число дел, а не число всех записей"
+  ],
+  "examples": [
+    {
+      "title": "Active",
+      "props": {
+        "label": "Orders",
+        "href": "#",
+        "icon": "receipt",
+        "active": true,
+        "count": 4
+      }
+    }
+  ]
+}

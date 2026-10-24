@@ -1,0 +1,4 @@
+.ds-navigation-item { display: inline-flex; align-items: center; gap: var(--space-8); height: 32px; padding: 0 var(--space-12); border-radius: var(--radius-control); color: var(--color-text-medium); text-decoration: none; font-size: var(--font-size-14); font-weight: var(--font-weight-medium); white-space: nowrap; }
+.ds-navigation-item:hover { background: var(--color-control-ghost-hover); color: var(--color-text-strong); }
+.ds-navigation-item--active { background: var(--color-control-selected); color: var(--color-text-accent); }
+.ds-navigation-item__count { min-width: 18px; height: 18px; padding: 0 var(--space-6); border-radius: var(--radius-pill); background: var(--color-accent-solid); color: var(--color-text-on-accent); font-size: var(--font-size-12); display: inline-flex; align-items: center; justify-content: center; }

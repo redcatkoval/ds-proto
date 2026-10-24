@@ -1,0 +1,11 @@
+.ds-spinner {
+  display: inline-block;
+  border-radius: var(--radius-pill);
+  border: 2px solid var(--color-stroke-soft);
+  border-top-color: currentColor;
+  animation: ds-spin 0.8s linear infinite;
+  flex: none;
+}
+.ds-spinner--sm { width: var(--space-16); height: var(--space-16); }
+.ds-spinner--md { width: var(--space-24); height: var(--space-24); }
+@keyframes ds-spin { to { transform: rotate(360deg); } }

@@ -1,0 +1,47 @@
+{
+  "name": "Select",
+  "group": "Поля",
+  "description": "Выбор одного значения из короткого списка: регион, валюта, статус.",
+  "design": "finished",
+  "usage": {
+    "do": [
+      "До пятнадцати вариантов",
+      "Значения, которые знают заранее"
+    ],
+    "dont": [
+      "Длинный список — нужен поиск",
+      "Два-три варианта видимые сразу — это Toggle"
+    ]
+  },
+  "behaviour": [
+    "Нативный список системы — работает на телефоне и с клавиатурой"
+  ],
+  "accessibility": "Нативный select со связанной подписью.",
+  "codegen": [
+    "placeholder — только если можно ничего не выбрать"
+  ],
+  "examples": [
+    {
+      "title": "Currency",
+      "props": {
+        "id": "ex-cur",
+        "label": "Currency",
+        "value": "eur",
+        "options": [
+          {
+            "value": "eur",
+            "label": "Euro (€)"
+          },
+          {
+            "value": "gbp",
+            "label": "Pound (£)"
+          },
+          {
+            "value": "ron",
+            "label": "Leu (lei)"
+          }
+        ]
+      }
+    }
+  ]
+}

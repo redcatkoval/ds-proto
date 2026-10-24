@@ -1,0 +1,33 @@
+{
+  "name": "Panel",
+  "group": "Раскладка",
+  "description": "Панель-контейнер: заголовок, действия справа, содержимое. Основной кирпич страницы админки.",
+  "design": "finished",
+  "usage": {
+    "do": [
+      "Каждый смысловой блок страницы — своя панель",
+      "Таблица во всю ширину — flush"
+    ],
+    "dont": [
+      "Панель в панели",
+      "Больше одной основной кнопки в шапке"
+    ]
+  },
+  "behaviour": [
+    "Без title и actions шапки нет"
+  ],
+  "accessibility": "section с заголовком h2.",
+  "codegen": [
+    "Действия панели — одна кнопка или DropdownMenu"
+  ],
+  "examples": [
+    {
+      "title": "Summary",
+      "props": {
+        "title": "Summary",
+        "description": "Paid by card on 22 Oct 2026"
+      },
+      "children": "€84.00 paid"
+    }
+  ]
+}

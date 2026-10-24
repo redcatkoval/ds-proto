@@ -1,0 +1,93 @@
+{
+  "name": "Toggle",
+  "group": "Выбор",
+  "description": "Переключатель между двумя–четырьмя вариантами одного вида. Все варианты видны сразу.",
+  "design": "finished",
+  "usage": {
+    "do": [
+      "Вид списка, период: «Day / Week / Month»"
+    ],
+    "dont": [
+      "Больше четырёх вариантов — это Select",
+      "Разделы страницы — это Tabs"
+    ]
+  },
+  "behaviour": [
+    "Выбран ровно один вариант"
+  ],
+  "accessibility": "radiogroup.",
+  "codegen": [
+    "label — что переключаем"
+  ],
+  "examples": [
+    {
+      "title": "Period",
+      "props": {
+        "label": "Period",
+        "value": "week",
+        "options": [
+          {
+            "value": "day",
+            "label": "Day"
+          },
+          {
+            "value": "week",
+            "label": "Week"
+          },
+          {
+            "value": "month",
+            "label": "Month"
+          }
+        ]
+      }
+    }
+  ],
+  "ruleExamples": {
+    "1": {
+      "do": {
+        "caption": "Три периода",
+        "nodes": [
+          {
+            "c": "Toggle",
+            "p": {
+              "label": "Period",
+              "value": "week",
+              "options": [
+                {
+                  "value": "day",
+                  "label": "Day"
+                },
+                {
+                  "value": "week",
+                  "label": "Week"
+                },
+                {
+                  "value": "month",
+                  "label": "Month"
+                }
+              ]
+            }
+          }
+        ]
+      },
+      "dont": {
+        "caption": "Один вариант — нечего выбирать",
+        "nodes": [
+          {
+            "c": "Toggle",
+            "p": {
+              "label": "View",
+              "value": "list",
+              "options": [
+                {
+                  "value": "list",
+                  "label": "List"
+                }
+              ]
+            }
+          }
+        ]
+      }
+    }
+  }
+}

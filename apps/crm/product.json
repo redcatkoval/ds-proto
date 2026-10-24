@@ -1,0 +1,59 @@
+{
+  "id": "admin",
+  "name": "Merrow Admin",
+  "brand": "merrow",
+  "url": "http://localhost:5173",
+  "description": "Админка магазина: заказы, товары, клиенты, склад, настройки. Устроена по образцу админки Medusa из DS-LAB. Интерфейс на английском.",
+  "screens": [
+    {
+      "slug": "orders",
+      "name": "Orders",
+      "route": "#/orders",
+      "file": "src/screens/OrdersScreen.tsx",
+      "pattern": "list"
+    },
+    {
+      "slug": "order",
+      "name": "Order detail",
+      "route": "#/orders/1042",
+      "file": "src/screens/OrderScreen.tsx",
+      "pattern": "record"
+    },
+    {
+      "slug": "products",
+      "name": "Products",
+      "route": "#/products",
+      "file": "src/screens/ProductsScreen.tsx",
+      "pattern": "list"
+    },
+    {
+      "slug": "product",
+      "name": "Product edit",
+      "route": "#/products/linen-apron",
+      "file": "src/screens/ProductScreen.tsx",
+      "pattern": "form"
+    },
+    {
+      "slug": "customers",
+      "name": "Customers",
+      "route": "#/customers",
+      "file": "src/screens/CustomersScreen.tsx",
+      "pattern": "list"
+    },
+    {
+      "slug": "inventory",
+      "name": "Inventory",
+      "route": "#/inventory",
+      "file": "src/screens/InventoryScreen.tsx",
+      "pattern": "list"
+    },
+    {
+      "slug": "settings",
+      "name": "Settings",
+      "route": "#/settings",
+      "file": "src/screens/SettingsScreen.tsx",
+      "pattern": "settings"
+    }
+  ],
+  "cover": "cover.jpg"
+}

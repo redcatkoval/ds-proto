@@ -1,0 +1,30 @@
+{
+  "name": "DropdownInput",
+  "group": "Поля",
+  "description": "Поле с выпадающим списком и вводом. Черновик: открытое свойство className, правил нет.",
+  "design": "in-progress",
+  "examples": [
+    {
+      "title": "Stage",
+      "props": {
+        "id": "ex-stage",
+        "label": "Stage",
+        "value": "talk",
+        "options": [
+          {
+            "value": "new",
+            "label": "New"
+          },
+          {
+            "value": "talk",
+            "label": "In talks"
+          },
+          {
+            "value": "won",
+            "label": "Won"
+          }
+        ]
+      }
+    }
+  ]
+}

@@ -1,0 +1,8 @@
+.ds-dropdown-menu { position: relative; display: inline-flex; }
+.ds-dropdown-menu__content { position: absolute; top: calc(100% + var(--space-4)); right: 0; z-index: 20; min-width: 200px; padding: var(--space-4); border-radius: var(--radius-surface); background: var(--color-surface-raised); box-shadow: var(--shadow-overlay); }
+.ds-dropdown-menu__separator { height: 1px; margin: var(--space-4) 0; background: var(--color-stroke-soft); }
+.ds-dropdown-menu__item { display: flex; align-items: center; gap: var(--space-8); width: 100%; height: 32px; padding: 0 var(--space-8); border: 0; border-radius: var(--radius-small); background: transparent; color: var(--color-text-strong); font: inherit; font-size: var(--font-size-14); text-align: left; cursor: pointer; }
+.ds-dropdown-menu__item svg { color: var(--color-text-soft); }
+.ds-dropdown-menu__item:hover, .ds-dropdown-menu__item:focus-visible { background: var(--color-control-ghost-hover); outline: none; }
+.ds-dropdown-menu__item--destructive, .ds-dropdown-menu__item--destructive svg { color: var(--color-text-danger); }
+.ds-dropdown-menu__item:disabled { color: var(--color-text-disabled); cursor: not-allowed; background: transparent; }

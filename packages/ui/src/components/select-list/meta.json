@@ -1,0 +1,31 @@
+{
+  "name": "SelectList",
+  "group": "Выбор",
+  "description": "Список флажков с выбором нескольких значений. Черновик: инлайн-стиль в разметке.",
+  "design": "in-progress",
+  "examples": [
+    {
+      "title": "Channels",
+      "props": {
+        "label": "Sales channels",
+        "value": [
+          "web"
+        ],
+        "options": [
+          {
+            "value": "web",
+            "label": "Web store"
+          },
+          {
+            "value": "market",
+            "label": "Marketplace"
+          },
+          {
+            "value": "pos",
+            "label": "Point of sale"
+          }
+        ]
+      }
+    }
+  ]
+}

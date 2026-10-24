@@ -1,0 +1,23 @@
+{
+  "$description": "Бренд Merrow. Слой поверх общей системы: только то, что бренду разрешено менять — токены бренда и формулировки компонентов. Правила компонентов общие и здесь не повторяются.",
+  "id": "merrow",
+  "name": "Merrow",
+  "status": "active",
+  "tagline": "Commerce tools for independent shops",
+  "about": "Merrow делает инструменты для небольших независимых магазинов: админку, где владелец ведёт заказы, товары и склад. Пользователь — человек, который сам и продаёт, и упаковывает, и отвечает клиентам. Ему некогда разбираться в интерфейсе.",
+  "audience": "Владельцы и сотрудники небольших онлайн-магазинов в Европе",
+  "language": "en-GB",
+  "products": ["admin"],
+  "tokens": {
+    "accent": "{color.teal}",
+    "font.display": "{font.family.inter-tight}",
+    "radius.control": "{radius.6}",
+    "radius.surface": "{radius.10}"
+  },
+  "strings": {
+    "spinner.label": "One moment",
+    "search.clear": "Clear",
+    "table.empty": "Nothing matches yet",
+    "modal.cancel": "Go back"
+  }
+}

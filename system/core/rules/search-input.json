@@ -1,0 +1,16 @@
+{
+  "component": "SearchInput",
+  "contract": "system/core/contracts/search-input.md",
+  "rules": [
+    {
+      "id": "search-input.one-per-screen",
+      "anchor": {
+        "section": "1",
+        "quote": "На одном экране не больше одного SearchInput."
+      },
+      "kind": "max-per-file",
+      "max": 1,
+      "message": "Больше одного поиска на экране"
+    }
+  ]
+}

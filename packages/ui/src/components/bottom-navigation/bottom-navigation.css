@@ -1,0 +1,1 @@
+.ds-bottom-navigation { display: flex; justify-content: space-around; padding: var(--space-8); background: var(--color-surface-raised); border-top: 1px solid var(--color-stroke-soft); box-shadow: 0 -4px 12px rgba(0, 0, 0, 0.08); }

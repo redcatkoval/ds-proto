@@ -1,0 +1,26 @@
+{
+  "$comment": "Хуки ds-proto: замок до правки, линтер после правки, полная проверка перед «готово». Скрипты — tools/hooks/.",
+  "permissions": {
+    "allow": [
+      "Bash(npm run check)",
+      "Bash(npm run lint)",
+      "Bash(node tools/check.mjs)",
+      "Bash(git status:*)",
+      "Bash(git diff:*)"
+    ]
+  },
+  "hooks": {
+    "SessionStart": [
+      { "hooks": [{ "type": "command", "command": "node \"$CLAUDE_PROJECT_DIR/tools/hooks/session-start.mjs\"", "timeout": 30 }] }
+    ],
+    "PreToolUse": [
+      { "matcher": "Edit|Write|MultiEdit|NotebookEdit|Bash", "hooks": [{ "type": "command", "command": "node \"$CLAUDE_PROJECT_DIR/tools/hooks/guard.mjs\"", "timeout": 30 }] }
+    ],
+    "PostToolUse": [
+      { "matcher": "Edit|Write|MultiEdit|Bash", "hooks": [{ "type": "command", "command": "node \"$CLAUDE_PROJECT_DIR/tools/hooks/after-edit.mjs\"", "timeout": 60 }] }
+    ],
+    "Stop": [
+      { "hooks": [{ "type": "command", "command": "node \"$CLAUDE_PROJECT_DIR/tools/hooks/before-done.mjs\"", "timeout": 180 }] }
+    ]
+  }
+}

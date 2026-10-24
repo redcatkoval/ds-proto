@@ -1,0 +1,32 @@
+{
+  "name": "TextArea",
+  "group": "Поля",
+  "description": "Многострочное поле для заметок и описаний.",
+  "design": "finished",
+  "usage": {
+    "do": [
+      "Описание товара, заметка к заказу"
+    ],
+    "dont": [
+      "Короткое значение — это TextInput"
+    ]
+  },
+  "behaviour": [
+    "Растягивается по вертикали",
+    "Скругление — как у панели, а не как у кнопки"
+  ],
+  "accessibility": "Как у TextInput.",
+  "codegen": [
+    "rows — по ожидаемой длине: 3–4 для заметки"
+  ],
+  "examples": [
+    {
+      "title": "Note",
+      "props": {
+        "id": "ex-note",
+        "label": "Note",
+        "value": "Leave the parcel at reception."
+      }
+    }
+  ]
+}

@@ -1,0 +1,4 @@
+.ds-toggle { display: inline-flex; padding: var(--space-2); gap: var(--space-2); border-radius: var(--radius-control); background: var(--color-background-muted); }
+.ds-toggle__option { height: 28px; padding: 0 var(--space-12); border: 0; border-radius: var(--radius-control); background: transparent; color: var(--color-text-medium); font: inherit; font-size: var(--font-size-13); font-weight: var(--font-weight-medium); cursor: pointer; }
+.ds-toggle__option:hover { color: var(--color-text-strong); }
+.ds-toggle__option--on { background: var(--color-surface-raised); color: var(--color-text-strong); box-shadow: var(--shadow-raised); }

@@ -1,0 +1,31 @@
+{
+  "name": "BottomNavigation",
+  "group": "Навигация",
+  "description": "Нижняя навигация для узкого экрана. Черновик: тень задана цветом числом.",
+  "design": "in-progress",
+  "examples": [
+    {
+      "title": "Three",
+      "props": {
+        "items": [
+          {
+            "label": "Orders",
+            "href": "#",
+            "icon": "receipt",
+            "active": true
+          },
+          {
+            "label": "Products",
+            "href": "#",
+            "icon": "package"
+          },
+          {
+            "label": "More",
+            "href": "#",
+            "icon": "more"
+          }
+        ]
+      }
+    }
+  ]
+}

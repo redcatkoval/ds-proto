@@ -1,0 +1,20 @@
+{
+  "component": "Label",
+  "contract": "system/core/contracts/label.md",
+  "rules": [
+    {
+      "id": "label.not-beside-field",
+      "anchor": {
+        "section": "1",
+        "quote": "Label не ставится соседом TextInput, TextArea или Select: подпись у них уже внутри."
+      },
+      "kind": "forbidden-sibling",
+      "siblings": [
+        "TextInput",
+        "TextArea",
+        "Select"
+      ],
+      "message": "Label рядом с полем, у которого подпись уже внутри"
+    }
+  ]
+}

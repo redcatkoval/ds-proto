@@ -1,0 +1,16 @@
+{
+  "component": "Tag",
+  "contract": "system/core/contracts/tag.md",
+  "rules": [
+    {
+      "id": "tag.max-three",
+      "anchor": {
+        "section": "1",
+        "quote": "Среди соседей одного родителя не больше трёх меток."
+      },
+      "kind": "max-per-parent",
+      "max": 3,
+      "message": "Рядом больше трёх меток"
+    }
+  ]
+}

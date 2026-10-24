@@ -1,0 +1,59 @@
+{
+  "name": "SideNavigation",
+  "group": "Навигация",
+  "description": "Боковая навигация продукта: магазин сверху, разделы, служебное внизу, сотрудник.",
+  "design": "finished",
+  "usage": {
+    "do": [
+      "Главная навигация админки",
+      "Служебные разделы — в footerItems"
+    ],
+    "dont": [
+      "Действия страницы — им место в шапке страницы",
+      "Больше восьми разделов"
+    ]
+  },
+  "behaviour": [
+    "Пункты — NavigationItem",
+    "Подпись для диктора — из формулировок бренда"
+  ],
+  "accessibility": "nav с подписью.",
+  "codegen": [
+    "Порядок разделов — по частоте работы: Orders первыми"
+  ],
+  "examples": [
+    {
+      "title": "Admin",
+      "props": {
+        "workspace": "Northfield Supply",
+        "user": "Ana Ferreira",
+        "items": [
+          {
+            "label": "Orders",
+            "href": "#",
+            "icon": "receipt",
+            "active": true,
+            "count": 4
+          },
+          {
+            "label": "Products",
+            "href": "#",
+            "icon": "package"
+          },
+          {
+            "label": "Customers",
+            "href": "#",
+            "icon": "users"
+          }
+        ],
+        "footerItems": [
+          {
+            "label": "Settings",
+            "href": "#",
+            "icon": "settings"
+          }
+        ]
+      }
+    }
+  ]
+}

@@ -1,0 +1,28 @@
+{
+  "component": "Tabs",
+  "contract": "system/core/contracts/tabs.md",
+  "rules": [
+    {
+      "id": "tabs.min-items",
+      "anchor": {
+        "section": "1",
+        "quote": "В items от двух до шести вкладок."
+      },
+      "kind": "min-items",
+      "prop": "items",
+      "min": 2,
+      "message": "Меньше двух вкладок"
+    },
+    {
+      "id": "tabs.max-items",
+      "anchor": {
+        "section": "1",
+        "quote": "В items от двух до шести вкладок."
+      },
+      "kind": "max-items",
+      "prop": "items",
+      "max": 6,
+      "message": "Больше шести вкладок"
+    }
+  ]
+}

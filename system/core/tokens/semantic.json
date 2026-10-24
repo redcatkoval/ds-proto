@@ -1,0 +1,86 @@
+{
+  "$description": "Слой 3. Роли. Ссылается на бренд и примитивы. Компоненты ссылаются только сюда (и на разрешённые шкалы отступов и размеров шрифта). Ряд {accent.N} — акцент текущего бренда.",
+  "color": {
+    "background": {
+      "base":    "{grey.1}",
+      "subtle":  "{grey.2}",
+      "muted":   "{grey.3}",
+      "overlay": { "light": "rgba(17,17,19,0.48)", "dark": "rgba(0,0,0,0.64)" }
+    },
+    "surface": {
+      "raised":  { "light": "{color.white}", "dark": "{grey.2}" },
+      "sunken":  "{grey.2}"
+    },
+    "text": {
+      "strong":    "{grey.12}",
+      "medium":    "{grey.11}",
+      "soft":      "{grey.10}",
+      "disabled":  "{grey.8}",
+      "on-accent": { "light": "{color.white}", "dark": "{color.white}" },
+      "accent":    "{accent.11}",
+      "danger":    "{red.11}",
+      "success":   "{green.11}",
+      "warning":   "{amber.11}"
+    },
+    "stroke": {
+      "soft":   "{grey.4}",
+      "medium": "{grey.6}",
+      "strong": "{grey.8}",
+      "focus":  "{accent.8}",
+      "danger": "{red.8}"
+    },
+    "control": {
+      "primary-rest":    "{accent.9}",
+      "primary-hover":   "{accent.10}",
+      "primary-press":   "{accent.11}",
+      "secondary-rest":  { "light": "{color.white}", "dark": "{grey.3}" },
+      "secondary-hover": { "light": "{grey.2}", "dark": "{grey.4}" },
+      "secondary-press": { "light": "{grey.3}", "dark": "{grey.5}" },
+      "ghost-hover":     "{grey.3}",
+      "ghost-press":     "{grey.4}",
+      "danger-rest":     "{red.9}",
+      "danger-hover":    "{red.10}",
+      "selected":        "{accent.3}",
+      "checked":         "{accent.9}"
+    },
+    "accent": {
+      "soft":   "{accent.3}",
+      "medium": "{accent.5}",
+      "solid":  "{accent.9}",
+      "text":   "{accent.11}"
+    },
+    "feedback": {
+      "danger-soft":   "{red.3}",
+      "danger-solid":  "{red.9}",
+      "success-soft":  "{green.3}",
+      "success-solid": "{green.9}",
+      "warning-soft":  "{amber.3}",
+      "warning-solid": "{amber.9}",
+      "info-soft":     "{blue.3}",
+      "info-solid":    "{blue.9}"
+    },
+    "tag": {
+      "grey-bg": "{grey.3}",   "grey-text": "{grey.11}",
+      "blue-bg": "{blue.3}",   "blue-text": "{blue.11}",
+      "green-bg": "{green.3}", "green-text": "{green.11}",
+      "amber-bg": "{amber.3}", "amber-text": "{amber.11}",
+      "red-bg": "{red.3}",     "red-text": "{red.11}",
+      "accent-bg": "{accent.3}", "accent-text": "{accent.11}"
+    }
+  },
+  "radius": {
+    "control": "{brand.radius.control}",
+    "surface": "{brand.radius.surface}",
+    "small":   "{radius.4}",
+    "pill":    "{radius.full}"
+  },
+  "font": {
+    "display": "{brand.font.display}",
+    "text":    "{font.family.inter}",
+    "mono":    "{font.family.mono}"
+  },
+  "shadow": {
+    "raised":  { "light": "0 1px 2px rgba(17,17,19,0.06), 0 0 0 1px rgba(17,17,19,0.06)", "dark": "0 0 0 1px rgba(255,255,255,0.06)" },
+    "overlay": { "light": "0 12px 32px rgba(17,17,19,0.16), 0 0 0 1px rgba(17,17,19,0.08)", "dark": "0 12px 32px rgba(0,0,0,0.5), 0 0 0 1px rgba(255,255,255,0.08)" }
+  }
+}

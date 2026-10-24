@@ -1,0 +1,28 @@
+{
+  "name": "RecordList",
+  "group": "Данные",
+  "description": "Список записей с заголовком. Черновик: собран из ListItem, с цветом числом в стилях.",
+  "design": "in-progress",
+  "examples": [
+    {
+      "title": "Recent customers",
+      "props": {
+        "title": "Recent customers",
+        "rows": [
+          {
+            "id": "1",
+            "title": "Ana Ferreira",
+            "description": "Lisbon",
+            "avatar": "Ana Ferreira"
+          },
+          {
+            "id": "2",
+            "title": "Jonas Weber",
+            "description": "Berlin",
+            "avatar": "Jonas Weber"
+          }
+        ]
+      }
+    }
+  ]
+}

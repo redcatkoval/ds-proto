@@ -1,0 +1,31 @@
+{
+  "name": "ErrorMessage",
+  "group": "Обратная связь",
+  "description": "Сообщение об ошибке под полем: что не так и как исправить.",
+  "design": "finished",
+  "usage": {
+    "do": [
+      "Под полем, которое надо исправить"
+    ],
+    "dont": [
+      "Внутри полей вручную — у полей есть свойство error",
+      "«Invalid value» — скажите, какое нужно"
+    ]
+  },
+  "behaviour": [
+    "Появляется сразу и читается диктором"
+  ],
+  "accessibility": "role=alert и связь с полем через aria-describedby.",
+  "codegen": [
+    "Текст — как исправить: «Enter an email like name@shop.com»"
+  ],
+  "examples": [
+    {
+      "title": "Email",
+      "props": {
+        "id": "ex-err"
+      },
+      "children": "Enter an email like name@shop.com"
+    }
+  ]
+}

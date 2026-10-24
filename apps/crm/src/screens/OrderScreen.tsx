@@ -19,10 +19,9 @@ export function OrderScreen() {
       section="orders"
       title={`#${o.number}`}
       crumbs={[{ label: "Orders", href: "#/orders" }, { label: `#${o.number}` }]}
-      meta={<><StatusBadge tone={o.payment[1]}>{o.payment[0]}</StatusBadge><StatusBadge tone={o.fulfilment[1]}>{o.fulfilment[0]}</StatusBadge></>}
+      meta={<><IconButton icon="copy" label={`Copy order number ${o.number}`} onClick={() => navigator.clipboard.writeText(`#${o.number}`)} /><StatusBadge tone={o.payment[1]}>{o.payment[0]}</StatusBadge><StatusBadge tone={o.fulfilment[1]}>{o.fulfilment[0]}</StatusBadge></>}
       actions={
         <>
-          <IconButton icon="copy" variant="secondary" size="md" label={`Copy order number ${o.number}`} />
           <DropdownMenu label="Order actions" items={[
             { label: "Archive order", icon: "archive", onSelect: () => { archivedOrders.add(o.id); go("/orders"); } },
             { label: "Cancel order", icon: "x", destructive: true, onSelect: () => setConfirm(true) },

@@ -324,7 +324,7 @@
       "rule": "icon-button.label",
       "component": "IconButton",
       "file": "apps/crm/src/screens/OrderScreen.tsx",
-      "line": 22,
+      "line": 23,
       "why": "подпись — выражение, её значение узнаётся при отрисовке",
       "product": "admin"
     }
@@ -562,5 +562,5 @@
       "broken": 0
     }
   },
-  "inputs": "17620959b88e19ea"
+  "inputs": "cde9cf0ee111809b"
 }

@@ -92,6 +92,20 @@ export function PreviewBar({ brand }: { brand: string }) {
     }
   }, [focus, onScreen]);
 
+  // панель стоит внизу по центру, там же, где Toast: пока она показана, отдаём её высоту стилям, и Toast встаёт над ней
+  useEffect(() => {
+    const el = bar.current?.querySelector<HTMLElement>(".pv-bar");
+    if (!el) return;
+    const root = document.documentElement;
+    const measure = () => root.style.setProperty("--pv-bar-space", `${window.innerHeight - el.getBoundingClientRect().top}px`);
+    measure();
+    root.toggleAttribute("data-pv-bar", true);
+    const ro = new ResizeObserver(measure);
+    ro.observe(el);
+    window.addEventListener("resize", measure);
+    return () => { ro.disconnect(); window.removeEventListener("resize", measure); root.removeAttribute("data-pv-bar"); root.style.removeProperty("--pv-bar-space"); };
+  }, [embedded]);
+
   if (embedded) return null;
 
   return (

@@ -1,6 +1,6 @@
 import { useMemo, useState } from "react";
-import { useNavigate } from "react-router-dom";
-import { Button, DataTable, EmptyState, FilterChip, MiniCard, Panel, SearchInput, StatusBadge } from "@ds/ui";
+import { useLocation, useNavigate } from "react-router-dom";
+import { Button, DataTable, EmptyState, FilterChip, MiniCard, Panel, SearchInput, StatusBadge, Toast } from "@ds/ui";
 import { Page } from "../Page";
 import { archivedOrders, money, orders } from "../data";
 
@@ -8,6 +8,9 @@ type Filter = "all" | "unfulfilled" | "unpaid" | "refunded";
 
 export function OrdersScreen() {
   const go = useNavigate();
+  const { state } = useLocation();
+  // Archive order на Order detail возвращает сюда с сообщением в state
+  const [toast, setToast] = useState<string | null>(() => (state as { toast?: string } | null)?.toast ?? null);
   const [query, setQuery] = useState("");
   const [filter, setFilter] = useState<Filter>("all");
   const [selected, setSelected] = useState<string[]>([]);
@@ -89,6 +92,7 @@ export function OrdersScreen() {
             action={{ label: "Clear filters", onClick: () => { setQuery(""); setFilter("all"); } }} />
         )}
       </Panel>
+      <Toast message={toast} onHide={() => { setToast(null); go("/orders", { replace: true }); }} />
     </Page>
   );
 }

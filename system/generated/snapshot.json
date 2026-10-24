@@ -8062,14 +8062,29 @@
       "brings": [],
       "usedIn": [],
       "usage": {
-        "direct": 0,
-        "files": [],
-        "screens": [],
+        "direct": 2,
+        "files": [
+          {
+            "file": "apps/crm/src/screens/OrderScreen.tsx",
+            "count": 1
+          },
+          {
+            "file": "apps/crm/src/screens/OrdersScreen.tsx",
+            "count": 1
+          }
+        ],
+        "screens": [
+          "admin/orders",
+          "admin/order"
+        ],
         "screensIndirect": []
       },
       "impact": {
         "components": [],
-        "screens": []
+        "screens": [
+          "admin/orders",
+          "admin/order"
+        ]
       },
       "contract": {
         "path": "system/core/contracts/toast.md",
@@ -9070,6 +9085,7 @@
         "Panel": 1,
         "SearchInput": 1,
         "StatusBadge": 2,
+        "Toast": 1,
         "Breadcrumbs": 1,
         "SideNavigation": 1
       },
@@ -9107,6 +9123,7 @@
         "StatusBadge": 3,
         "Tag": 1,
         "TextArea": 1,
+        "Toast": 1,
         "Breadcrumbs": 1,
         "SideNavigation": 1
       },
@@ -10227,6 +10244,22 @@
             "TextInput",
             "Breadcrumbs",
             "SideNavigation"
+          ]
+        },
+        {
+          "screen": "admin/orders",
+          "product": "admin",
+          "what": "на экране появились Toast",
+          "components": [
+            "Toast"
+          ]
+        },
+        {
+          "screen": "admin/order",
+          "product": "admin",
+          "what": "на экране появились Toast",
+          "components": [
+            "Toast"
           ]
         }
       ]

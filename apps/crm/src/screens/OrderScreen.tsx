@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
-import { Avatar, Button, DropdownMenu, IconButton, ListItem, Modal, Panel, StatusBadge, Tag, TextArea } from "@ds/ui";
+import { Avatar, Button, DropdownMenu, IconButton, ListItem, Modal, Panel, StatusBadge, Tag, TextArea, Toast } from "@ds/ui";
 import { Page } from "../Page";
 import { archivedOrders, findCustomer, findOrder, money } from "../data";
 
@@ -11,6 +11,7 @@ export function OrderScreen() {
   const c = findCustomer(o.customer);
   const [note, setNote] = useState("Gift wrap requested. Leave at reception if nobody answers.");
   const [confirm, setConfirm] = useState(false);
+  const [toast, setToast] = useState<string | null>(null);
   const subtotal = o.items.reduce((a, it) => a + it.qty * it.price, 0);
   const open = o.fulfilment[0] === "Not fulfilled";
 
@@ -19,11 +20,11 @@ export function OrderScreen() {
       section="orders"
       title={`#${o.number}`}
       crumbs={[{ label: "Orders", href: "#/orders" }, { label: `#${o.number}` }]}
-      meta={<><IconButton icon="copy" label={`Copy order number ${o.number}`} onClick={() => navigator.clipboard.writeText(`#${o.number}`)} /><StatusBadge tone={o.payment[1]}>{o.payment[0]}</StatusBadge><StatusBadge tone={o.fulfilment[1]}>{o.fulfilment[0]}</StatusBadge></>}
+      meta={<><IconButton icon="copy" label={`Copy order number ${o.number}`} onClick={() => navigator.clipboard.writeText(`#${o.number}`).then(() => setToast("Order number copied"))} /><StatusBadge tone={o.payment[1]}>{o.payment[0]}</StatusBadge><StatusBadge tone={o.fulfilment[1]}>{o.fulfilment[0]}</StatusBadge></>}
       actions={
         <>
           <DropdownMenu label="Order actions" items={[
-            { label: "Archive order", icon: "archive", onSelect: () => { archivedOrders.add(o.id); go("/orders"); } },
+            { label: "Archive order", icon: "archive", onSelect: () => { archivedOrders.add(o.id); go("/orders", { state: { toast: "Order archived" } }); } },
             { label: "Cancel order", icon: "x", destructive: true, onSelect: () => setConfirm(true) },
           ]} />
         </>
@@ -86,6 +87,7 @@ export function OrderScreen() {
         action={{ label: "Cancel order", variant: "danger", onClick: () => setConfirm(false) }}>
         The customer gets a full refund of {money(o.total)} and an email. You can't undo this.
       </Modal>
+      <Toast message={toast} onHide={() => setToast(null)} />
     </Page>
   );
 }

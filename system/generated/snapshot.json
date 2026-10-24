@@ -8015,7 +8015,20 @@
         "Один Toast в конце экрана: <Toast message={toast} onHide={() => setToast(null)} />",
         "message — что сделано, объект + причастие: «Order number copied», «Order archived»"
       ],
-      "examples": [],
+      "examples": [
+        {
+          "title": "Order number copied",
+          "props": {
+            "message": null
+          },
+          "trigger": {
+            "label": "Show message",
+            "props": {
+              "message": "Order number copied"
+            }
+          }
+        }
+      ],
       "ruleExamples": {},
       "strings": [],
       "files": {

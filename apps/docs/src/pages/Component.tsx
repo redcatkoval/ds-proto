@@ -2,6 +2,7 @@ import { useEffect, useRef, useState } from "react";
 import { Link, Navigate, useParams } from "react-router-dom";
 import { byName, bySlug, lastChange, levelMeaning, lint, plural, productById, screenByKey, screenUrl, snapshot } from "../data";
 import { CompLink, ExtLink, GradeBadge, LevelPill, PageHead, ResultMark, Rich, Section, Stamp, Badge } from "../ui";
+import { Button } from "@ds/ui";
 import { Controls, Live, RuleNodes, initialProps } from "../live/Live";
 import { useScope } from "../scope";
 import type { Component } from "../types";
@@ -84,6 +85,9 @@ function Preview({ c }: { c: Component }) {
   const timer = useRef<number | undefined>(undefined);
   useEffect(() => { setProps(initialProps(c, example)); }, [c, example]);
   useEffect(() => { setTheme(resolvedTheme); }, [resolvedTheme]);
+  // Пример с кнопкой — для того, что появляется по действию (Toast): кнопка меняет свойства,
+  // а рамка держит фиксированный компонент внутри холста, а не внизу окна
+  const trigger = c.examples[example]?.trigger;
   const onEvent = (name: string) => {
     setEvent((e) => ({ name, n: (e?.name === name ? e.n : 0) + 1 }));
     window.clearTimeout(timer.current);
@@ -105,7 +109,8 @@ function Preview({ c }: { c: Component }) {
               </div>
             </div>
           </div>
-          <div className="d-canvas__stage ds-root" data-theme={theme} data-brand={brand}>
+          <div className={`d-canvas__stage ds-root${trigger ? " d-canvas__stage--frame" : ""}`} data-theme={theme} data-brand={brand}>
+            {trigger ? <Button variant="secondary" onClick={() => setProps({ ...props, ...trigger.props })}>{trigger.label}</Button> : null}
             <Live c={c} props={props} onProps={setProps} onEvent={onEvent} />
           </div>
           <div className="d-canvas__log" aria-live="polite">{event ? <><code>{event.name}</code> сработал{event.n > 1 ? ` · ${event.n} раза` : ""}</> : "Здесь видно, какие события отдаёт компонент."}</div>

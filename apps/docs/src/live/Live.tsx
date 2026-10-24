@@ -1,5 +1,5 @@
 // Живой компонент: настоящий код из @ds/ui, свойства — из снимка.
-// Управляемые пары (value/onChange, checked/onChange, selected/onToggle, open/onClose)
+// Управляемые пары (value/onChange, checked/onChange, selected/onToggle, open/onClose, message/onHide)
 // связаны сами, поэтому компонент можно трогать, как в продукте.
 
 import { Component as ReactComponent, useEffect, useMemo, useState, type ComponentType, type ReactNode } from "react";
@@ -69,6 +69,7 @@ export function Live({ c, props, onProps, onEvent }: {
     else if (p.name === "onChange" && names.has("checked")) handlers.onChange = (v: unknown) => { set("checked")(v); report(); };
     else if (p.name === "onToggle" && names.has("selected")) handlers.onToggle = (v: unknown) => { set("selected")(v); report(); };
     else if (p.name === "onClose" && names.has("open")) handlers.onClose = () => { set("open")(false); report(); };
+    else if (p.name === "onHide" && names.has("message")) handlers.onHide = () => { set("message")(null); report(); };
     else handlers[p.name] = (e?: { preventDefault?: () => void }) => { e?.preventDefault?.(); report(); };
   }
   const key = useMemo(() => JSON.stringify(props), [props]);

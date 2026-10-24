@@ -15,7 +15,7 @@ export type Component = {
   name: string; slug: string; group: string; description: string; design: string;
   guidance: { do: string[]; dont: string[] } | null;
   behaviour: string[]; accessibility: string | null; codegen: string[];
-  examples: { title: string; props: Record<string, unknown>; children?: unknown }[];
+  examples: { title: string; props: Record<string, unknown>; children?: unknown; trigger?: { label: string; props: Record<string, unknown> } }[];
   ruleExamples: Record<string, { do?: RuleExample; dont?: RuleExample }>;
   strings: string[];
   files: { component: string; styles: string | null; meta: string };
